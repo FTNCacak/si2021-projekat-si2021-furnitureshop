@@ -1,13 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31912.275
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureShop", "FurnitureShop\FurnitureShop.csproj", "{091EE0CE-371D-4F1F-9B89-85188AAEA06B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{14CC5BBF-C2D0-461F-A844-F74EF64A71C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussniessLayer", "BussniessLayer\BussniessLayer.csproj", "{22928636-B6CF-4AB0-900A-EC09E6C1F7C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BussniessLayer\BusinessLayer.csproj", "{22928636-B6CF-4AB0-900A-EC09E6C1F7C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EC79D18C-5CF9-4E1A-885D-287AC5A843CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{7641F509-F269-4A39-B1A2-D99F1C7D2B8A}"
+	ProjectSection(SolutionItems) = preProject
+		Employee.cs = Employee.cs
+		Item.cs = Item.cs
+		Order.cs = Order.cs
+		OrderItem.cs = OrderItem.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{98314ED3-742C-43D7-AF5B-BFD606BC3945}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +42,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7641F509-F269-4A39-B1A2-D99F1C7D2B8A} = {EC79D18C-5CF9-4E1A-885D-287AC5A843CB}
+		{98314ED3-742C-43D7-AF5B-BFD606BC3945} = {EC79D18C-5CF9-4E1A-885D-287AC5A843CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B7054AF-B047-4BEE-A504-900B95F6A50E}
