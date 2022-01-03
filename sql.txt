@@ -1,8 +1,8 @@
 SET IDENTITY_INSERT [dbo].[Employees] ON
-INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Adresss], [Username], [Password], [Role], [ManagerID]) VALUES (113, N'Luka', N'luka@gmail.com', 45545654, N'Kostolca15', N'lukica14', N'1111', N'Product Menager', 115)
-INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Adresss], [Username], [Password], [Role], [ManagerID]) VALUES (114, N'Ivan', N'ivana@gmail.com', 45456454, N'Knjeginje Ljubice 88', N'ivana<3', N'2222', N'Employee Frist Grade', 113)
-INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Adresss], [Username], [Password], [Role], [ManagerID]) VALUES (116, N'Marko Marinkovic', N'marko@gmail.com', 45135135, N'Jelovina16', N'marzica08', N'3333', N'Administrator', 116)
-INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Adresss], [Username], [Password], [Role], [ManagerID]) VALUES (117, N'Dragan', N'dragan@gmail.com', 51354843, N'Holivud bb', N'gidracar', N'4455', N'Direktor', NULL)
+INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Address], [Username], [Password], [Role], [ManagerID]) VALUES (113, N'Luka', N'luka@gmail.com', 45545654, N'Kostolca15', N'lukica14', N'1111', N'Product Menager', 115)
+INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Address], [Username], [Password], [Role], [ManagerID]) VALUES (114, N'Ivan', N'ivana@gmail.com', 45456454, N'Knjeginje Ljubice 88', N'ivana<3', N'2222', N'Employee Frist Grade', 113)
+INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Address], [Username], [Password], [Role], [ManagerID]) VALUES (116, N'Marko Marinkovic', N'marko@gmail.com', 45135135, N'Jelovina16', N'marzica08', N'3333', N'Administrator', 116)
+INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Address], [Username], [Password], [Role], [ManagerID]) VALUES (117, N'Dragan', N'dragan@gmail.com', 51354843, N'Holivud bb', N'gidracar', N'4455', N'Direktor', NULL)
 SET IDENTITY_INSERT [dbo].[Employees] OFF
 
 SET IDENTITY_INSERT [dbo].[Orders] ON
@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[Employees] (
     [Name]        NVARCHAR (30) NOT NULL,
     [Email]       NVARCHAR (30) NOT NULL,
     [PhoneNumber] INT           NOT NULL,
-    [Adresss]     NVARCHAR (30) NOT NULL,
+    [Address]     NVARCHAR (30) NOT NULL,
     [Username]    NVARCHAR (15) NOT NULL,
     [Password]    NVARCHAR (20) NOT NULL,
     [Role]        NVARCHAR (50) NULL,
