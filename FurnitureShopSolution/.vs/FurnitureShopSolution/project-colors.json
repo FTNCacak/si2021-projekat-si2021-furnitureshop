@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "091ee0ce-371d-4f1f-9b89-85188aaea06b": {
+      "ProjectGuid": "091ee0ce-371d-4f1f-9b89-85188aaea06b",
+      "DisplayName": "FurnitureShop",
+      "ColorIndex": 0
+    },
+    "14cc5bbf-c2d0-461f-a844-f74ef64a71c7": {
+      "ProjectGuid": "14cc5bbf-c2d0-461f-a844-f74ef64a71c7",
+      "DisplayName": "DataAccessLayer",
+      "ColorIndex": 1
+    },
+    "22928636-b6cf-4ab0-900a-ec09e6c1f7c5": {
+      "ProjectGuid": "22928636-b6cf-4ab0-900a-ec09e6c1f7c5",
+      "DisplayName": "BussniessLayer",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

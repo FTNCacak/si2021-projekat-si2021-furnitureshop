@@ -1,8 +1,13 @@
 ﻿using System;
 
-public class Class1
+public class Order
 {
-	public Class1()
+	public Order()
 	{
+		public int OrderID { get; set; }
+		public int OrderItemID { get; set; }
+		public int EmployeeID { get; set; }
+		public DateTime OrderDate { get; set; }
+		public decimal Bill { get; set; }
 	}
 }

@@ -1,8 +1,11 @@
 ﻿using System;
 
-public class Class1
+public class OrderItem
 {
-	public Class1()
+	public OrderItem()
 	{
+		public int OrderItemID { get; set; }
+		public int ItemID { get; set; }
+		public int Quantity { get; set; }
 	}
 }
