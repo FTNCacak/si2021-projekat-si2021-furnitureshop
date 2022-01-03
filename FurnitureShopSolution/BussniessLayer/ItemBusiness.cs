@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccessLayer;
+using Shared.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,11 @@ namespace BussniessLayer
 {
     class ItemBusiness
     {
+        private readonly ItemRepository ItemRepository = new ItemRepository();
+
+        public List<Item> GetAllItems()
+        {
+            return ItemRepository.GetAllItems();
+        }
     }
 }
