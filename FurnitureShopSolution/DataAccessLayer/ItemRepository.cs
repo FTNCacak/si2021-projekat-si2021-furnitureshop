@@ -87,5 +87,18 @@ namespace DataAccessLayer
 
             }
         }
+        public void DeleteItems(int itemid)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                sqlConnection.Open();
+                using (SqlCommand sqlCommand = new SqlCommand())
+                {
+                    sqlCommand.Connection = sqlConnection;
+                    sqlCommand.CommandText = "DELETE FROM Items WHERE ItemID = @ItemID";
+                    sqlCommand.Parameters.AddWithValue("@ItemID", itemid);
+                }
+            }
+        }
     }
 }

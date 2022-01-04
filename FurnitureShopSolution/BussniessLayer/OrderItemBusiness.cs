@@ -22,5 +22,9 @@ namespace BussniessLayer
                 return true;
             return false;
         }
+        public void DeleteItemsOrders(int itemorder)
+        {
+            OrderItemRepository.DeleteOrderItems(itemorder);
+        }
     }
 }

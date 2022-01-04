@@ -23,5 +23,9 @@ namespace BussniessLayer
                 return true;
             return false;
         }
+        public void DeleteItems(int item)
+        {
+            ItemRepository.DeleteItems(item);
+        }
     }
 }

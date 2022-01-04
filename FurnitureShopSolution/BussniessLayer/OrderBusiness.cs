@@ -23,5 +23,9 @@ namespace BussniessLayer
                 return true;
             return false;
         }
+        public void DeleteOrders(int order)
+        {
+            OrderRepository.DeleteOrders(order);
+        }
     }
 }
