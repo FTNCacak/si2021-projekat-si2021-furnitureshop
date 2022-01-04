@@ -62,5 +62,30 @@ namespace DataAccessLayer
 
             }
         }
+        public int UpdateItem(Item Item)
+        {
+
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                string command = "UPDATE Items SET ProductName=@ProductName, ProductPrice=@ProductPrice, ProductColor=@ProductColor, ProductDescription=@ProductDescription, Type=@Type, Category = @Category, Stock = @Stock, Discount=@Discount  WHERE ItemID=@ItemID";
+
+
+                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@ItemID", Item.ItemID);
+                sqlCommand.Parameters.AddWithValue("@ProductName", Item.ProductName);
+                sqlCommand.Parameters.AddWithValue("@ProductPrice", Item.ProductPrice);
+                sqlCommand.Parameters.AddWithValue("@ProductColor", Item.ProductColor);
+                sqlCommand.Parameters.AddWithValue("@ProductDescription", Item.ProductDescription);
+                sqlCommand.Parameters.AddWithValue("@Type", Item.Type);
+                sqlCommand.Parameters.AddWithValue("@Category", Item.Category);
+                sqlCommand.Parameters.AddWithValue("@Stock", Item.Stock);
+                sqlCommand.Parameters.AddWithValue("@Discount", Item.Discount);
+
+                sqlConnection.Open();
+
+                return sqlCommand.ExecuteNonQuery();
+
+            }
+        }
     }
 }

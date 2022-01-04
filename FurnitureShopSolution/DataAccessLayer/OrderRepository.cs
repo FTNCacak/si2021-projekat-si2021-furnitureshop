@@ -55,5 +55,26 @@ namespace DataAccessLayer
 
             }
         }
+        public int UpdateOrder(Order Order)
+        {
+
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                //proveriti logiku sql upita ispod
+                string command = "UPDATE OrderItems SET OrderItemID=@OrderItemID, EmployeeID=@EmployeeID, OrderDate=@OrderDate, Bill=@Bill  WHERE OrderID=@Order";
+
+                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@OrderID", Order.OrderID);
+                sqlCommand.Parameters.AddWithValue("@OrderItemID", Order.OrderItemID);
+                sqlCommand.Parameters.AddWithValue("@EmployeeID", Order.EmployeeID);
+                sqlCommand.Parameters.AddWithValue("@OrderDate", Order.OrderDate);
+                sqlCommand.Parameters.AddWithValue("@Bill", Order.Bill);
+
+                sqlConnection.Open();
+
+                return sqlCommand.ExecuteNonQuery();
+
+            }
+        }
     }
 }

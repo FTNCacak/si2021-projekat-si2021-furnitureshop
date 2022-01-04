@@ -1,0 +1,9 @@
+C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\FurnitureShop.exe.config
+C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\FurnitureShop.exe
+C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\FurnitureShop.pdb
+C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.csproj.AssemblyReference.cache
+C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.Properties.Resources.resources
+C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.csproj.GenerateResource.cache
+C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.csproj.CoreCompileInputs.cache
+C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.exe
+C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.pdb
