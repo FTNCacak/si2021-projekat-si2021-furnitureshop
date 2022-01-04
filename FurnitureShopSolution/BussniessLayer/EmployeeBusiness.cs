@@ -16,15 +16,15 @@ namespace BussniessLayer
         {
             return employeeRepository.GetAllEmployees();
         }
-        public bool InsertEmployees(Employee e)
+        public bool InsertEmployee(Employee e)
         {
-            if (this.employeeRepository.InsertEmployees(e) > 0)
+            if (this.employeeRepository.InsertEmployee(e) > 0)
                 return true;
             return false;
         }
-        public void DeleteEmployees(int employee)
+        public void DeleteEmployee(int employee)
         {
-            employeeRepository.DeleteEmplyees(employee);
+            employeeRepository.DeleteEmplyee(employee);
         }
     }
 }

@@ -44,7 +44,7 @@ namespace DataAccessLayer
             return items;
         }
 
-        public int InsertItems(Item i)
+        public int InsertItem(Item i)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
@@ -87,7 +87,7 @@ namespace DataAccessLayer
 
             }
         }
-        public void DeleteItems(int itemid)
+        public void DeleteItem(int itemid)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {

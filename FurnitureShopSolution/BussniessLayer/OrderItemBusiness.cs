@@ -16,15 +16,15 @@ namespace BussniessLayer
         {
             return OrderItemRepository.GetAllOrderItems();
         }
-        public bool InsertOrderItems(OrderItem oi)
+        public bool InsertOrderItem(OrderItem oi)
         {
-            if (this.OrderItemRepository.InsertOrderItems(oi) > 0)
+            if (this.OrderItemRepository.InsertOrderItem(oi) > 0)
                 return true;
             return false;
         }
-        public void DeleteItemsOrders(int itemorder)
+        public void DeleteItemsOrder(int itemorder)
         {
-            OrderItemRepository.DeleteOrderItems(itemorder);
+            OrderItemRepository.DeleteOrderItem(itemorder);
         }
     }
 }

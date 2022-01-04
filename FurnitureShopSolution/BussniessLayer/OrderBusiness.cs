@@ -17,15 +17,15 @@ namespace BussniessLayer
             return OrderRepository.GetAllOrders();
         }
 
-        public bool InsertOrders(Order o)
+        public bool InsertOrder(Order o)
         {
-            if (this.OrderRepository.InsertOrders(o) > 0)
+            if (this.OrderRepository.InsertOrder(o) > 0)
                 return true;
             return false;
         }
-        public void DeleteOrders(int order)
+        public void DeleteOrder(int order)
         {
-            OrderRepository.DeleteOrders(order);
+            OrderRepository.DeleteOrder(order);
         }
     }
 }

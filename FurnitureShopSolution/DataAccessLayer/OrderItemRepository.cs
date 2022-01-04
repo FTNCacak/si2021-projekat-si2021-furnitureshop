@@ -37,7 +37,7 @@ namespace DataAccessLayer
             return orderItems;
         }
 
-        public int InsertOrderItems(OrderItem oi)
+        public int InsertOrderItem(OrderItem oi)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
@@ -74,7 +74,7 @@ namespace DataAccessLayer
 
             }
         }
-        public void DeleteOrderItems(int orderitemid)
+        public void DeleteOrderItem(int orderitemid)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {

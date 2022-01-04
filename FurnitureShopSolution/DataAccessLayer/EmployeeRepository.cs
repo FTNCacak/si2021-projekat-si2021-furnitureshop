@@ -44,7 +44,7 @@ namespace DataAccessLayer
             }
             return employees;
         }
-        public int InsertEmployees(Employee e)
+        public int InsertEmployee(Employee e)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
@@ -85,7 +85,7 @@ namespace DataAccessLayer
 
             }
         }
-        public void DeleteEmplyees(int emplyeeid)
+        public void DeleteEmplyee(int emplyeeid)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {

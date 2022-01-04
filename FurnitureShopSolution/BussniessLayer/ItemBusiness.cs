@@ -17,15 +17,15 @@ namespace BussniessLayer
             return ItemRepository.GetAllItems();
         }
 
-        public bool InsertItems(Item i)
+        public bool InsertItem(Item i)
         {
-            if (this.ItemRepository.InsertItems(i) > 0)
+            if (this.ItemRepository.InsertItem(i) > 0)
                 return true;
             return false;
         }
-        public void DeleteItems(int item)
+        public void DeleteItem(int item)
         {
-            ItemRepository.DeleteItems(item);
+            ItemRepository.DeleteItem(item);
         }
     }
 }
