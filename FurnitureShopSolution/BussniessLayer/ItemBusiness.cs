@@ -23,6 +23,10 @@ namespace BussniessLayer
                 return true;
             return false;
         }
+        public int UpdateItem(Item Item)
+        {
+            return ItemRepository.UpdateItem(Item);
+        }
         public void DeleteItem(int item)
         {
             ItemRepository.DeleteItem(item);

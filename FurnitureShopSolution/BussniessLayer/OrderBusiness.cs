@@ -23,6 +23,10 @@ namespace BussniessLayer
                 return true;
             return false;
         }
+        public int UpdateOrder(Order Order)
+        {
+            return OrderRepository.UpdateOrder(Order);
+        }
         public void DeleteOrder(int order)
         {
             OrderRepository.DeleteOrder(order);
