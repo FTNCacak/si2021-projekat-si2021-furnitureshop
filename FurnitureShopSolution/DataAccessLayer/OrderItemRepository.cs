@@ -36,5 +36,23 @@ namespace DataAccessLayer
             }
             return orderItems;
         }
+
+        public int InsertOrderItems(OrderItem oi)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText =
+                string.Format("INSERT INTO OrderItems VALUES({0},{1})",
+                    oi.ItemID, oi.Quantity);
+                sqlConnection.Open();
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                sqlConnection.Open();
+                return sqlCommand.ExecuteNonQuery();
+
+            }
+        }
     }
 }

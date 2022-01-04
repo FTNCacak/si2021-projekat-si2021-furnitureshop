@@ -44,5 +44,22 @@ namespace DataAccessLayer
             }
             return employees;
         }
+        public int InsertEmployees(Employee e)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText =
+                string.Format("INSERT INTO Employess VALUES('{0}','{1}',{2},'{3}','{4}','{5}','{6}',{7})"
+                    , e.Name, e.Email, e.PhoneNumber, e.Address, e.Username, e.Password, e.Role, e.MenagerID);
+                sqlConnection.Open();
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                sqlConnection.Open();
+                return sqlCommand.ExecuteNonQuery();
+
+            }
+        }
     }
 }

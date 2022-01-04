@@ -43,5 +43,24 @@ namespace DataAccessLayer
             }
             return items;
         }
+
+        public int InsertItems(Item i)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText =
+                string.Format("INSERT INTO Items VALUES('{0}',{1},'{2}','{3}','{4}','{5}',{6},{7})",
+                i.ProductName, i.ProductPrice, i.ProductColor, i.ProductDescription, i.Type, i.Category, i.Stock, i.Discount);
+                    ;
+                sqlConnection.Open();
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                sqlConnection.Open();
+                return sqlCommand.ExecuteNonQuery();
+
+            }
+        }
     }
 }

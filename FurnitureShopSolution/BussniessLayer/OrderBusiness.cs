@@ -16,5 +16,12 @@ namespace BussniessLayer
         {
             return OrderRepository.GetAllOrders();
         }
+
+        public bool InsertOrders(Order o)
+        {
+            if (this.OrderRepository.InsertOrders(o) > 0)
+                return true;
+            return false;
+        }
     }
 }

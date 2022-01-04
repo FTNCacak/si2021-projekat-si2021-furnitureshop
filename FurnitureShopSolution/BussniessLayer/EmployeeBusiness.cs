@@ -16,5 +16,11 @@ namespace BussniessLayer
         {
             return employeeRepository.GetAllEmployees();
         }
+        public bool InsertEmployees(Employee e)
+        {
+            if (this.employeeRepository.InsertEmployees(e) > 0)
+                return true;
+            return false;
+        }
     }
 }

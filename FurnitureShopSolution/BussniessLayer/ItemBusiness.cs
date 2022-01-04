@@ -16,5 +16,12 @@ namespace BussniessLayer
         {
             return ItemRepository.GetAllItems();
         }
+
+        public bool InsertItems(Item i)
+        {
+            if (this.ItemRepository.InsertItems(i) > 0)
+                return true;
+            return false;
+        }
     }
 }
