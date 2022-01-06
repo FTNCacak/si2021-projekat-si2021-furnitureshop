@@ -16,5 +16,18 @@ namespace FurnitureShop
         {
             InitializeComponent();
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+            LogIn l=new LogIn();
+            l.Close();
+
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            Admin a = new Admin();
+            a.Show();
+        }
     }
 }

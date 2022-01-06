@@ -8,6 +8,6 @@ namespace Shared
 {
     public class Constants
     {
-        public static string connectionString = "Data Source=(localdb)\\ProjectsV13;Initial Catalog=FurnitureShopDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public static string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FurnitureDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
     }
 }
