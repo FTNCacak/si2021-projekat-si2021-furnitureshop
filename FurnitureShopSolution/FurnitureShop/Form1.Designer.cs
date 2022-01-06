@@ -37,12 +37,15 @@
             this.dataGridStock = new System.Windows.Forms.DataGridView();
             this.Sell = new System.Windows.Forms.TabPage();
             this.panelSale = new System.Windows.Forms.Panel();
+            this.buttonRemoveItem = new System.Windows.Forms.Button();
+            this.buttonAddItem = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.listBoxItems = new System.Windows.Forms.ListBox();
             this.listBoxCart = new System.Windows.Forms.ListBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelBill = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,8 +54,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridEmployees = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.labelBill = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControlMenu.SuspendLayout();
             this.HomeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,10 +89,10 @@
             this.HomeTab.Controls.Add(this.textBoxSearch);
             this.HomeTab.Controls.Add(this.dataGridStock);
             this.HomeTab.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.HomeTab.Location = new System.Drawing.Point(4, 22);
+            this.HomeTab.Location = new System.Drawing.Point(4, 28);
             this.HomeTab.Name = "HomeTab";
             this.HomeTab.Padding = new System.Windows.Forms.Padding(15);
-            this.HomeTab.Size = new System.Drawing.Size(737, 400);
+            this.HomeTab.Size = new System.Drawing.Size(737, 394);
             this.HomeTab.TabIndex = 0;
             this.HomeTab.Text = "Home";
             // 
@@ -142,6 +143,7 @@
             this.dataGridStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridStock.Location = new System.Drawing.Point(18, 120);
             this.dataGridStock.Name = "dataGridStock";
+            this.dataGridStock.RowHeadersWidth = 51;
             this.dataGridStock.Size = new System.Drawing.Size(701, 262);
             this.dataGridStock.TabIndex = 0;
             // 
@@ -150,17 +152,18 @@
             this.Sell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(212)))), ((int)(((byte)(200)))));
             this.Sell.Controls.Add(this.panelSale);
             this.Sell.Controls.Add(this.label1);
-            this.Sell.Location = new System.Drawing.Point(4, 22);
+            this.Sell.Location = new System.Drawing.Point(4, 28);
             this.Sell.Name = "Sell";
             this.Sell.Padding = new System.Windows.Forms.Padding(3);
-            this.Sell.Size = new System.Drawing.Size(737, 400);
+            this.Sell.Size = new System.Drawing.Size(737, 394);
             this.Sell.TabIndex = 1;
             this.Sell.Text = "Sale";
             // 
             // panelSale
             // 
             this.panelSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSale.Controls.Add(this.button1);
+            this.panelSale.Controls.Add(this.buttonRemoveItem);
+            this.panelSale.Controls.Add(this.buttonAddItem);
             this.panelSale.Controls.Add(this.label6);
             this.panelSale.Controls.Add(this.listBoxItems);
             this.panelSale.Controls.Add(this.listBoxCart);
@@ -176,6 +179,34 @@
             this.panelSale.Size = new System.Drawing.Size(633, 315);
             this.panelSale.TabIndex = 1;
             // 
+            // buttonRemoveItem
+            // 
+            this.buttonRemoveItem.BackColor = System.Drawing.Color.Tan;
+            this.buttonRemoveItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRemoveItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemoveItem.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.buttonRemoveItem.Location = new System.Drawing.Point(292, 142);
+            this.buttonRemoveItem.Name = "buttonRemoveItem";
+            this.buttonRemoveItem.Size = new System.Drawing.Size(75, 42);
+            this.buttonRemoveItem.TabIndex = 10;
+            this.buttonRemoveItem.Text = "Remove item from Cart";
+            this.buttonRemoveItem.UseVisualStyleBackColor = false;
+            this.buttonRemoveItem.Click += new System.EventHandler(this.buttonRemoveItem_Click);
+            // 
+            // buttonAddItem
+            // 
+            this.buttonAddItem.BackColor = System.Drawing.Color.Tan;
+            this.buttonAddItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAddItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddItem.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.buttonAddItem.Location = new System.Drawing.Point(292, 94);
+            this.buttonAddItem.Name = "buttonAddItem";
+            this.buttonAddItem.Size = new System.Drawing.Size(75, 42);
+            this.buttonAddItem.TabIndex = 9;
+            this.buttonAddItem.Text = "Add item to Cart";
+            this.buttonAddItem.UseVisualStyleBackColor = false;
+            this.buttonAddItem.Click += new System.EventHandler(this.buttonAddItem_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -183,7 +214,7 @@
             this.label6.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label6.Location = new System.Drawing.Point(17, 36);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 17);
+            this.label6.Size = new System.Drawing.Size(56, 23);
             this.label6.TabIndex = 8;
             this.label6.Text = "Items:";
             // 
@@ -191,9 +222,10 @@
             // 
             this.listBoxItems.BackColor = System.Drawing.Color.Tan;
             this.listBoxItems.FormattingEnabled = true;
+            this.listBoxItems.ItemHeight = 19;
             this.listBoxItems.Location = new System.Drawing.Point(20, 66);
             this.listBoxItems.Name = "listBoxItems";
-            this.listBoxItems.Size = new System.Drawing.Size(253, 160);
+            this.listBoxItems.Size = new System.Drawing.Size(253, 156);
             this.listBoxItems.Sorted = true;
             this.listBoxItems.TabIndex = 7;
             // 
@@ -201,9 +233,10 @@
             // 
             this.listBoxCart.BackColor = System.Drawing.Color.Tan;
             this.listBoxCart.FormattingEnabled = true;
+            this.listBoxCart.ItemHeight = 19;
             this.listBoxCart.Location = new System.Drawing.Point(388, 66);
             this.listBoxCart.Name = "listBoxCart";
-            this.listBoxCart.Size = new System.Drawing.Size(202, 160);
+            this.listBoxCart.Size = new System.Drawing.Size(202, 156);
             this.listBoxCart.TabIndex = 6;
             // 
             // pictureBox2
@@ -223,7 +256,7 @@
             this.label5.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label5.Location = new System.Drawing.Point(399, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 17);
+            this.label5.Size = new System.Drawing.Size(111, 23);
             this.label5.TabIndex = 4;
             this.label5.Text = "Shoping cart:";
             // 
@@ -238,13 +271,21 @@
             this.panel1.Size = new System.Drawing.Size(135, 24);
             this.panel1.TabIndex = 3;
             // 
+            // labelBill
+            // 
+            this.labelBill.AutoSize = true;
+            this.labelBill.Location = new System.Drawing.Point(-1, 4);
+            this.labelBill.Name = "labelBill";
+            this.labelBill.Size = new System.Drawing.Size(0, 19);
+            this.labelBill.TabIndex = 1;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label4.Location = new System.Drawing.Point(3, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 19);
             this.label4.TabIndex = 0;
             // 
             // label3
@@ -254,7 +295,7 @@
             this.label3.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label3.Location = new System.Drawing.Point(422, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 17);
+            this.label3.Size = new System.Drawing.Size(36, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Bill:";
             // 
@@ -265,7 +306,7 @@
             this.label2.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label2.Location = new System.Drawing.Point(17, 257);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.Size = new System.Drawing.Size(99, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Order Date:";
             // 
@@ -278,7 +319,7 @@
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dateTimePicker1.Location = new System.Drawing.Point(100, 256);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(188, 26);
             this.dateTimePicker1.TabIndex = 0;
             this.dateTimePicker1.Value = new System.DateTime(2022, 1, 6, 0, 0, 0, 0);
             // 
@@ -289,7 +330,7 @@
             this.label1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label1.Location = new System.Drawing.Point(283, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 30);
+            this.label1.Size = new System.Drawing.Size(208, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Make a new sale";
             // 
@@ -297,9 +338,9 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(212)))), ((int)(((byte)(200)))));
             this.tabPage1.Controls.Add(this.dataGridEmployees);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(737, 400);
+            this.tabPage1.Size = new System.Drawing.Size(737, 394);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Employees";
             // 
@@ -309,43 +350,22 @@
             this.dataGridEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridEmployees.Location = new System.Drawing.Point(20, 109);
             this.dataGridEmployees.Name = "dataGridEmployees";
+            this.dataGridEmployees.RowHeadersWidth = 51;
             this.dataGridEmployees.Size = new System.Drawing.Size(701, 262);
             this.dataGridEmployees.TabIndex = 1;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(212)))), ((int)(((byte)(200)))));
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(737, 400);
+            this.tabPage3.Size = new System.Drawing.Size(737, 394);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Supply";
             // 
-            // labelBill
-            // 
-            this.labelBill.AutoSize = true;
-            this.labelBill.Location = new System.Drawing.Point(-1, 4);
-            this.labelBill.Name = "labelBill";
-            this.labelBill.Size = new System.Drawing.Size(0, 13);
-            this.labelBill.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Tan;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.button1.Location = new System.Drawing.Point(292, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 42);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Add item to Cart";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -400,7 +420,8 @@
         private System.Windows.Forms.ListBox listBoxItems;
         private System.Windows.Forms.ListBox listBoxCart;
         private System.Windows.Forms.Label labelBill;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAddItem;
+        private System.Windows.Forms.Button buttonRemoveItem;
     }
 }
 

@@ -35,7 +35,6 @@ C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolu
 C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.exe
 C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.pdb
 C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\FurnitureShop\bin\Debug\aa-DJ\FurnitureShop.resources.dll
-C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.Admin.resources
 C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.Register.aa-DJ.resources
 C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\FurnitureShop\obj\Debug\aa-DJ\FurnitureShop.resources.dll
 C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\aa-DJ\FurnitureShop.resources.dll
@@ -43,3 +42,4 @@ C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.Admin.
 C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.Register.resources
 C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.Register.aa-DJ.resources
 C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\aa-DJ\FurnitureShop.resources.dll
+C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.AdminVerification.resources

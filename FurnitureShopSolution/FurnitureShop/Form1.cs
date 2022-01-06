@@ -26,10 +26,6 @@ namespace FurnitureShop
         {
             List<Item> items = new List<Item>();
             items = itemBusiness.GetInStockItems();
-            Register r = new Register();
-            r.Show();
-            Admin a = new Admin();
-            a.Show();
             textBoxSearch.Clear();
             dataGridStock.DataSource = itemBusiness.GetInStockItems();
             dataGridEmployees.DataSource = employeeBusiness.GetAllEmployees();
@@ -42,26 +38,28 @@ namespace FurnitureShop
 
 
         }
-        void listBoxItems_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            int index = this.listBoxItems.IndexFromPoint(e.Location);
-            labelBill.Text = index.ToString();
-        }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddItem_Click(object sender, EventArgs e)
         {
             if(listBoxItems.SelectedItems.Count > 0)
             {
                 listBoxCart.Items.Add(listBoxItems.SelectedItem);
-                
             }
 
             
+        }
+
+        private void buttonRemoveItem_Click(object sender, EventArgs e)
+        {
+            if (listBoxCart.SelectedItems.Count > 0)
+            {
+                listBoxCart.Items.Remove(listBoxCart.SelectedItem);
+            }
         }
     }
 }

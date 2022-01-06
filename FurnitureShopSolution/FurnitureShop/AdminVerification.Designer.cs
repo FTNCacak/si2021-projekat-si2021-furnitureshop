@@ -1,6 +1,6 @@
 ﻿namespace FurnitureShop
 {
-    partial class Admin
+    partial class AdminVerification
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxAVusername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxAVpassword = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.Registration = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -42,20 +42,19 @@
             this.label1.BackColor = System.Drawing.Color.SeaShell;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Sienna;
-            this.label1.Location = new System.Drawing.Point(4, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(5, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.Size = new System.Drawing.Size(99, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username:";
             // 
-            // textBox1
+            // textBoxAVusername
             // 
-            this.textBox1.Location = new System.Drawing.Point(88, 47);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(101, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBoxAVusername.Location = new System.Drawing.Point(117, 58);
+            this.textBoxAVusername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxAVusername.Name = "textBoxAVusername";
+            this.textBoxAVusername.Size = new System.Drawing.Size(133, 22);
+            this.textBoxAVusername.TabIndex = 1;
             // 
             // label2
             // 
@@ -63,20 +62,19 @@
             this.label2.BackColor = System.Drawing.Color.SeaShell;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Sienna;
-            this.label2.Location = new System.Drawing.Point(8, 88);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(11, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.Size = new System.Drawing.Size(92, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
             // 
-            // textBox2
+            // textBoxAVpassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(88, 89);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBoxAVpassword.Location = new System.Drawing.Point(117, 110);
+            this.textBoxAVpassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxAVpassword.Name = "textBoxAVpassword";
+            this.textBoxAVpassword.Size = new System.Drawing.Size(133, 22);
+            this.textBoxAVpassword.TabIndex = 3;
             // 
             // buttonRegister
             // 
@@ -84,13 +82,14 @@
             this.buttonRegister.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonRegister.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonRegister.Location = new System.Drawing.Point(16, 137);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRegister.Location = new System.Drawing.Point(21, 169);
+            this.buttonRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(173, 37);
+            this.buttonRegister.Size = new System.Drawing.Size(231, 46);
             this.buttonRegister.TabIndex = 18;
             this.buttonRegister.Text = "Add employee";
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // Registration
             // 
@@ -98,28 +97,28 @@
             this.Registration.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Registration.ForeColor = System.Drawing.Color.Sienna;
             this.Registration.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Registration.Location = new System.Drawing.Point(9, 7);
-            this.Registration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Registration.Location = new System.Drawing.Point(12, 9);
             this.Registration.Name = "Registration";
-            this.Registration.Size = new System.Drawing.Size(177, 25);
+            this.Registration.Size = new System.Drawing.Size(216, 31);
             this.Registration.TabIndex = 20;
             this.Registration.Text = "Admin verification";
             // 
-            // Admin
+            // AdminVerification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(206, 185);
+            this.ClientSize = new System.Drawing.Size(275, 228);
             this.Controls.Add(this.Registration);
             this.Controls.Add(this.buttonRegister);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxAVpassword);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxAVusername);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Admin";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "AdminVerification";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.AdminVerification_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,9 +127,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAVusername;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxAVpassword;
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Label Registration;
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BussniessLayer;
+using Shared.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,11 @@ namespace FurnitureShop
 {
     public partial class Register : Form
     {
+        private readonly EmployeeBusiness employeeBusiness;
+        
         public Register()
         {
+            this.employeeBusiness = new EmployeeBusiness();
             InitializeComponent();
         }
 
@@ -26,8 +31,20 @@ namespace FurnitureShop
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            Admin a = new Admin();
+
+            Employee emp = new Employee();
+            emp.Name = textBoxName.Text;
+            emp.Email = textBoxEmail.Text;
+            emp.PhoneNumber = Convert.ToInt32(textBoxPhoneNumber.Text);
+            emp.Address = textBoxAdress.Text;
+            emp.Username = textBoxUserName.Text;
+            emp.Password = textBoxPassword.Text;
+            emp.Role = textBoxRole.Text;
+            emp.ManagerID = Convert.ToInt32(textBoxMenagerID.Text);
+
+            AdminVerification a = new AdminVerification(emp);
             a.Show();
+
         }
     }
 }

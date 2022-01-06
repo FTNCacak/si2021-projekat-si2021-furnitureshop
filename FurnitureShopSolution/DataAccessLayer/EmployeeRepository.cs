@@ -43,21 +43,24 @@ namespace DataAccessLayer
             }
             return employees;
         }
-        public int InsertEmployee(Employee e)
+        public int InsertEmployee(Employee employee)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
+                sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = sqlConnection;
-                sqlCommand.CommandText =
-                string.Format("INSERT INTO Employess VALUES('{0}','{1}',{2},'{3}','{4}','{5}','{6}',{7})"
-                    , e.Name, e.Email, e.PhoneNumber, e.Address, e.Username, e.Password, e.Role, e.ManagerID);
-                sqlConnection.Open();
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                sqlCommand.CommandText = "INSERT INTO Employees VALUES (@Name,@Email,@PhoneNumber,@Address,@Username,@Password,@Role,@ManagerID)";
+                sqlCommand.Parameters.AddWithValue("@Name", employee.Name);
+                sqlCommand.Parameters.AddWithValue("@Email", employee.Email);
+                sqlCommand.Parameters.AddWithValue("@PhoneNumber", employee.PhoneNumber);
+                sqlCommand.Parameters.AddWithValue("@Address", employee.Address);
+                sqlCommand.Parameters.AddWithValue("@Username", employee.Username);
+                sqlCommand.Parameters.AddWithValue("@Password", employee.Password);
+                sqlCommand.Parameters.AddWithValue("@Role", employee.Role);
+                sqlCommand.Parameters.AddWithValue("@ManagerID", employee.ManagerID);
 
-                sqlConnection.Open();
                 return sqlCommand.ExecuteNonQuery();
-
             }
         }
         public int UpdateEmployee(Employee employee)
