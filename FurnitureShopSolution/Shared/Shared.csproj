@@ -51,5 +51,9 @@
   <ItemGroup>
     <Folder Include="Interfaces\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pictures\585e4ad1cb11b227491c3391.png" />
+    <Content Include="Pictures\Thesquid.ink-Free-Flat-Sample-Armchair.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

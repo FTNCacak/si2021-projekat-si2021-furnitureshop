@@ -1,0 +1,11 @@
+C:\SI_project\FurnitureShopSolution\BussniessLayer\bin\Debug\BussniessLayer.dll
+C:\SI_project\FurnitureShopSolution\BussniessLayer\bin\Debug\BussniessLayer.pdb
+C:\SI_project\FurnitureShopSolution\BussniessLayer\bin\Debug\DataAccessLayer.dll
+C:\SI_project\FurnitureShopSolution\BussniessLayer\bin\Debug\Shared.dll
+C:\SI_project\FurnitureShopSolution\BussniessLayer\bin\Debug\DataAccessLayer.pdb
+C:\SI_project\FurnitureShopSolution\BussniessLayer\bin\Debug\Shared.pdb
+C:\SI_project\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\SI_project\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\SI_project\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\SI_project\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.dll
+C:\SI_project\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.pdb

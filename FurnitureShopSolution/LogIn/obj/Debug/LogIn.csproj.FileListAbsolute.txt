@@ -1,0 +1,9 @@
+C:\SI_project\FurnitureShopSolution\LogIn\bin\Debug\LogIn.exe.config
+C:\SI_project\FurnitureShopSolution\LogIn\bin\Debug\LogIn.exe
+C:\SI_project\FurnitureShopSolution\LogIn\bin\Debug\LogIn.pdb
+C:\SI_project\FurnitureShopSolution\LogIn\obj\Debug\LogIn.LogIn.resources
+C:\SI_project\FurnitureShopSolution\LogIn\obj\Debug\LogIn.Properties.Resources.resources
+C:\SI_project\FurnitureShopSolution\LogIn\obj\Debug\LogIn.csproj.GenerateResource.cache
+C:\SI_project\FurnitureShopSolution\LogIn\obj\Debug\LogIn.csproj.CoreCompileInputs.cache
+C:\SI_project\FurnitureShopSolution\LogIn\obj\Debug\LogIn.exe
+C:\SI_project\FurnitureShopSolution\LogIn\obj\Debug\LogIn.pdb

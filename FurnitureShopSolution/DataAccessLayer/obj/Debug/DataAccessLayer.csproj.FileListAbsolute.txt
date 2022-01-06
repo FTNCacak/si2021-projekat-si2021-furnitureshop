@@ -1,0 +1,9 @@
+C:\SI_project\FurnitureShopSolution\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\SI_project\FurnitureShopSolution\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\SI_project\FurnitureShopSolution\DataAccessLayer\bin\Debug\Shared.dll
+C:\SI_project\FurnitureShopSolution\DataAccessLayer\bin\Debug\Shared.pdb
+C:\SI_project\FurnitureShopSolution\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\SI_project\FurnitureShopSolution\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\SI_project\FurnitureShopSolution\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\SI_project\FurnitureShopSolution\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\SI_project\FurnitureShopSolution\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

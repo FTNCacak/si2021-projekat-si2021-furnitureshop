@@ -35,9 +35,8 @@ namespace DataAccessLayer
                     employee.Address = sqlDataReader.GetString(4);
                     employee.Username = sqlDataReader.GetString(5);
                     employee.Password = sqlDataReader.GetString(6);
-                    employee.Role = sqlDataReader.GetString(7);
-                    employee.ManagerID = sqlDataReader.GetInt32(8);
-
+                    employee.Role = sqlDataReader.IsDBNull(7) ? "none" : sqlDataReader.GetString(7);
+                    employee.ManagerID = sqlDataReader.IsDBNull(8) ? 0 : sqlDataReader.GetInt32(8);
                     employees.Add(employee);
                 }
 

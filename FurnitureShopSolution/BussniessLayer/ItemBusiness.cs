@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 
 namespace BussniessLayer
 {
-    class ItemBusiness
+    public class ItemBusiness
     {
         private readonly ItemRepository ItemRepository = new ItemRepository();
 
         public List<Item> GetAllItems()
         {
             return ItemRepository.GetAllItems();
+        }
+        public List<Item> GetInStockItems()
+        {
+            return ItemRepository.GetAllItems().Where(i=>i.Stock>0).ToList();
         }
 
         public bool InsertItem(Item i)

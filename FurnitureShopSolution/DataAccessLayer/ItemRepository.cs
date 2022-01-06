@@ -35,9 +35,11 @@ namespace DataAccessLayer
                     item.Type = sqlDataReader.GetString(5);
                     item.Category = sqlDataReader.GetString(6);
                     item.Stock = sqlDataReader.GetInt32(7);
-                    item.Discount = sqlDataReader.GetInt32(8);
-
+                    item.Discount = sqlDataReader.IsDBNull(8) ? 0 : sqlDataReader.GetInt32(8);
+                    
                     items.Add(item);
+
+
                 }
 
             }

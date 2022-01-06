@@ -7,3 +7,11 @@ C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.csproj
 C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.csproj.CoreCompileInputs.cache
 C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.exe
 C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.pdb
+C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.Form1.resources
+C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\BussniessLayer.dll
+C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\Shared.dll
+C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\DataAccessLayer.dll
+C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\BussniessLayer.pdb
+C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\Shared.pdb
+C:\SI_project\FurnitureShopSolution\FurnitureShop\bin\Debug\DataAccessLayer.pdb
+C:\SI_project\FurnitureShopSolution\FurnitureShop\obj\Debug\FurnitureShop.csproj.CopyComplete

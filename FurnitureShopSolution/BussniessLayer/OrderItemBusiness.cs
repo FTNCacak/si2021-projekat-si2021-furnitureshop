@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BussniessLayer
 {
-    class OrderItemBusiness
+    public class OrderItemBusiness
     {
         private readonly OrderItemRepository OrderItemRepository = new OrderItemRepository();
 
