@@ -62,6 +62,7 @@ namespace FurnitureShop
             // 
             // textBoxName
             // 
+            this.textBoxName.BackColor = System.Drawing.Color.Snow;
             resources.ApplyResources(this.textBoxName, "textBoxName");
             this.textBoxName.Name = "textBoxName";
             // 
@@ -155,8 +156,10 @@ namespace FurnitureShop
             // buttonRegister
             // 
             this.buttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonRegister.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.buttonRegister.FlatAppearance.BorderSize = 2;
             resources.ApplyResources(this.buttonRegister, "buttonRegister");
-            this.buttonRegister.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonRegister.ForeColor = System.Drawing.Color.SaddleBrown;
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
@@ -164,7 +167,7 @@ namespace FurnitureShop
             // Registration
             // 
             resources.ApplyResources(this.Registration, "Registration");
-            this.Registration.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.Registration.ForeColor = System.Drawing.Color.Sienna;
             this.Registration.Name = "Registration";
             // 
             // groupBox2
