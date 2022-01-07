@@ -39,11 +39,14 @@ namespace FurnitureShop
             emp.Address = textBoxAdress.Text;
             emp.Username = textBoxUserName.Text;
             emp.Password = textBoxPassword.Text;
-            emp.Role = textBoxRole.Text;
-            emp.ManagerID = Convert.ToInt32(textBoxMenagerID.Text);
+            emp.Role = textBoxRole.Text.CompareTo("")==0 ? "none" : textBoxRole.Text;
+            emp.ManagerID = textBoxMenagerID.Text.CompareTo("") == 0 ? 0 : Convert.ToInt32(textBoxMenagerID.Text);
+            
 
             AdminVerification a = new AdminVerification(emp);
             a.Show();
+
+            
 
         }
     }

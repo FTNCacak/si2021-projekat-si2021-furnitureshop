@@ -99,5 +99,15 @@ namespace FurnitureShop.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Thesquid_ink_Free_Flat_Sample_Armchair {
+            get {
+                object obj = ResourceManager.GetObject("Thesquid.ink-Free-Flat-Sample-Armchair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

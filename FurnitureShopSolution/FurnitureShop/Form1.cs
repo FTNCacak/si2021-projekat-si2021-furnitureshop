@@ -27,13 +27,18 @@ namespace FurnitureShop
             List<Item> items = new List<Item>();
             items = itemBusiness.GetInStockItems();
             textBoxSearch.Clear();
-            dataGridStock.DataSource = itemBusiness.GetInStockItems();
+            
             dataGridEmployees.DataSource = employeeBusiness.GetAllEmployees();
+
+            //sale tab
+            dataGridStock.DataSource = itemBusiness.GetInStockItems();
             listBoxItems.HorizontalScrollbar = true;
             foreach(var item in items)
               {
                 listBoxItems.Items.Add(string.Format("{0} / Price:{1} / {2} / {3} / {4} / {5} / In stock:{6} / Discount:{7} ",item.ProductName,item.ProductPrice,item.ProductColor,item.ProductDescription,item.Type,item.Category, item.Stock, item.Discount));
               }
+
+
             
 
 

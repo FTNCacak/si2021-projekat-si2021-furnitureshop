@@ -26,10 +26,12 @@ namespace FurnitureShop
 
         private void AdminVerification_Load(object sender, EventArgs e)
         {
+            
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
+            int pom = 0;
             if (textBoxAVusername.Text == "" && textBoxAVpassword.Text == "")
             {
                 //MessageBox.Show("Fill up all fileds!!");
@@ -41,9 +43,23 @@ namespace FurnitureShop
                     if (emp.Role.ToUpper().CompareTo("ADMINISTRATOR")==0)
                     {
                         employeeBusiness.InsertEmployee(employee);
+                        MessageBox.Show("User successfully added. ");
+                        LogIn l = new LogIn();
+                        l.Show();
+                        this.Hide();
+                        pom = 1;
+                        
                     }
                 }
+
             }
+            if(pom!=1)
+            {
+                MessageBox.Show("Account with password and username you provided does't exist or doesn't have \"administrator\" role. Please try again!");
+            }
+            
         }
+
+       
     }
 }

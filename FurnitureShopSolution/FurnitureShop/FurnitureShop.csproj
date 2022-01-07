@@ -100,6 +100,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -162,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Double-J-Design-Diagram-Free-Shopping-cart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thesquid.ink-Free-Flat-Sample-Armchair.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
