@@ -54,6 +54,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridEmployees = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControlMenu.SuspendLayout();
             this.HomeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -135,15 +138,17 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(444, 30);
             this.textBoxSearch.TabIndex = 1;
-            this.textBoxSearch.Text = "ew";
             // 
             // dataGridStock
             // 
+            this.dataGridStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridStock.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.dataGridStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridStock.Location = new System.Drawing.Point(18, 120);
+            this.dataGridStock.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridStock.Location = new System.Drawing.Point(18, 114);
             this.dataGridStock.Name = "dataGridStock";
             this.dataGridStock.RowHeadersWidth = 51;
+            this.dataGridStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridStock.Size = new System.Drawing.Size(701, 262);
             this.dataGridStock.TabIndex = 0;
             // 
@@ -337,6 +342,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(212)))), ((int)(((byte)(200)))));
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.buttonDelete);
             this.tabPage1.Controls.Add(this.dataGridEmployees);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
@@ -348,10 +356,10 @@
             // 
             this.dataGridEmployees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
             this.dataGridEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridEmployees.Location = new System.Drawing.Point(20, 109);
+            this.dataGridEmployees.Location = new System.Drawing.Point(20, 95);
             this.dataGridEmployees.Name = "dataGridEmployees";
             this.dataGridEmployees.RowHeadersWidth = 51;
-            this.dataGridEmployees.Size = new System.Drawing.Size(701, 262);
+            this.dataGridEmployees.Size = new System.Drawing.Size(701, 276);
             this.dataGridEmployees.TabIndex = 1;
             // 
             // tabPage3
@@ -363,12 +371,56 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Supply";
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackColor = System.Drawing.Color.Tan;
+            this.buttonDelete.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.buttonDelete.FlatAppearance.BorderSize = 2;
+            this.buttonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tan;
+            this.buttonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonDelete.Location = new System.Drawing.Point(20, 41);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(113, 30);
+            this.buttonDelete.TabIndex = 3;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Tan;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Tan;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SaddleBrown;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(598, 41);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 30);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Tan;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Snow;
+            this.textBox1.Location = new System.Drawing.Point(278, 41);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(314, 30);
+            this.textBox1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(117)))), ((int)(((byte)(81)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(791, 458);
             this.Controls.Add(this.tabControlMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -390,6 +442,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployees)).EndInit();
             this.ResumeLayout(false);
 
@@ -422,6 +475,9 @@
         private System.Windows.Forms.Label labelBill;
         private System.Windows.Forms.Button buttonAddItem;
         private System.Windows.Forms.Button buttonRemoveItem;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

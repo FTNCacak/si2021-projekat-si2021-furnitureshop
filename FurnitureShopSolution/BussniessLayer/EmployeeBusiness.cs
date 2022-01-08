@@ -26,9 +26,9 @@ namespace BussniessLayer
         {
             return employeeRepository.UpdateEmployee(employee);
         }
-        public void DeleteEmployee(int employee)
+        public int DeleteEmployee(int employee)
         {
-            employeeRepository.DeleteEmplyee(employee);
+            return employeeRepository.DeleteEmplyee(employee);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace FurnitureShop
     {
         private readonly ItemBusiness itemBusiness = new ItemBusiness();
         private readonly EmployeeBusiness employeeBusiness = new EmployeeBusiness();
-
+        BindingList<Employee> emp;
         public Form1()
         {
             InitializeComponent();
@@ -26,21 +26,19 @@ namespace FurnitureShop
         {
             List<Item> items = new List<Item>();
             items = itemBusiness.GetInStockItems();
-            textBoxSearch.Clear();
-            
-            dataGridEmployees.DataSource = employeeBusiness.GetAllEmployees();
 
-            //sale tab
+            textBoxSearch.Clear();
+
+            emp = new BindingList<Employee>(employeeBusiness.GetAllEmployees());
+            dataGridEmployees.DataSource = emp;
+
+
             dataGridStock.DataSource = itemBusiness.GetInStockItems();
             listBoxItems.HorizontalScrollbar = true;
             foreach(var item in items)
               {
                 listBoxItems.Items.Add(string.Format("{0} / Price:{1} / {2} / {3} / {4} / {5} / In stock:{6} / Discount:{7} ",item.ProductName,item.ProductPrice,item.ProductColor,item.ProductDescription,item.Type,item.Category, item.Stock, item.Discount));
               }
-
-
-            
-
 
         }
 
@@ -55,8 +53,6 @@ namespace FurnitureShop
             {
                 listBoxCart.Items.Add(listBoxItems.SelectedItem);
             }
-
-            
         }
 
         private void buttonRemoveItem_Click(object sender, EventArgs e)
@@ -65,6 +61,12 @@ namespace FurnitureShop
             {
                 listBoxCart.Items.Remove(listBoxCart.SelectedItem);
             }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            employeeBusiness.DeleteEmployee(Convert.ToInt32(dataGridEmployees.SelectedRows[0].Cells[0].Value));
+            emp.RemoveAt(dataGridEmployees.SelectedRows[0].Index);
         }
     }
 }

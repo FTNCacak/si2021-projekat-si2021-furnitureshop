@@ -87,7 +87,7 @@ namespace DataAccessLayer
 
             }
         }
-        public void DeleteEmplyee(int emplyeeid)
+        public int DeleteEmplyee(int emplyeeid)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
@@ -97,6 +97,8 @@ namespace DataAccessLayer
                     sqlCommand.Connection = sqlConnection;
                     sqlCommand.CommandText = "DELETE FROM Employees WHERE EmployeeID = @EmployeeID";
                     sqlCommand.Parameters.AddWithValue("@EmployeeID", emplyeeid);
+
+                    return sqlCommand.ExecuteNonQuery();
                 }
             }
         }
