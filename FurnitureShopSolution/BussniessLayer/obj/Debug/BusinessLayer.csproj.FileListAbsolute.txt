@@ -20,3 +20,14 @@ C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolu
 C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.dll
 C:\Users\Dragan\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.pdb
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\bin\Debug\BussniessLayer.dll
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\bin\Debug\BussniessLayer.pdb
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\bin\Debug\Shared.dll
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\bin\Debug\Shared.pdb
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.dll
+C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.pdb
