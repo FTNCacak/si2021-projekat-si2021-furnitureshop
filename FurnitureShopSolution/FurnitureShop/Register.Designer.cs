@@ -57,89 +57,96 @@ namespace FurnitureShop
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.ForeColor = System.Drawing.Color.Bisque;
             this.label1.Name = "label1";
             // 
             // textBoxName
             // 
-            this.textBoxName.BackColor = System.Drawing.Color.Snow;
+            this.textBoxName.BackColor = System.Drawing.Color.Bisque;
             resources.ApplyResources(this.textBoxName, "textBoxName");
             this.textBoxName.Name = "textBoxName";
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.ForeColor = System.Drawing.Color.Bisque;
             this.label2.Name = "label2";
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.BackColor = System.Drawing.Color.Bisque;
             resources.ApplyResources(this.textBoxEmail, "textBoxEmail");
             this.textBoxEmail.Name = "textBoxEmail";
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.ForeColor = System.Drawing.Color.Bisque;
             this.label3.Name = "label3";
             // 
             // textBoxPhoneNumber
             // 
+            this.textBoxPhoneNumber.BackColor = System.Drawing.Color.Bisque;
             resources.ApplyResources(this.textBoxPhoneNumber, "textBoxPhoneNumber");
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.ForeColor = System.Drawing.Color.Bisque;
             this.label4.Name = "label4";
             // 
             // textBoxAdress
             // 
+            this.textBoxAdress.BackColor = System.Drawing.Color.Bisque;
             resources.ApplyResources(this.textBoxAdress, "textBoxAdress");
             this.textBoxAdress.Name = "textBoxAdress";
             // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.ForeColor = System.Drawing.Color.Bisque;
             this.label5.Name = "label5";
             // 
             // textBoxRole
             // 
+            this.textBoxRole.BackColor = System.Drawing.Color.Bisque;
             resources.ApplyResources(this.textBoxRole, "textBoxRole");
             this.textBoxRole.Name = "textBoxRole";
             // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.ForeColor = System.Drawing.Color.Bisque;
             this.label6.Name = "label6";
             // 
             // label7
             // 
             resources.ApplyResources(this.label7, "label7");
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.ForeColor = System.Drawing.Color.Bisque;
             this.label7.Name = "label7";
             // 
             // textBoxPassword
             // 
+            this.textBoxPassword.BackColor = System.Drawing.Color.Bisque;
             resources.ApplyResources(this.textBoxPassword, "textBoxPassword");
             this.textBoxPassword.Name = "textBoxPassword";
             // 
             // textBoxUserName
             // 
+            this.textBoxUserName.BackColor = System.Drawing.Color.Bisque;
             resources.ApplyResources(this.textBoxUserName, "textBoxUserName");
             this.textBoxUserName.Name = "textBoxUserName";
             // 
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.ForeColor = System.Drawing.Color.Bisque;
             this.label8.Name = "label8";
             // 
             // textBoxMenagerID
             // 
+            this.textBoxMenagerID.BackColor = System.Drawing.Color.Bisque;
             resources.ApplyResources(this.textBoxMenagerID, "textBoxMenagerID");
             this.textBoxMenagerID.Name = "textBoxMenagerID";
             // 
@@ -155,11 +162,11 @@ namespace FurnitureShop
             // 
             // buttonRegister
             // 
-            this.buttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonRegister.BackColor = System.Drawing.Color.Chocolate;
             this.buttonRegister.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
             this.buttonRegister.FlatAppearance.BorderSize = 2;
             resources.ApplyResources(this.buttonRegister, "buttonRegister");
-            this.buttonRegister.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.buttonRegister.ForeColor = System.Drawing.Color.Bisque;
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
@@ -167,11 +174,12 @@ namespace FurnitureShop
             // Registration
             // 
             resources.ApplyResources(this.Registration, "Registration");
-            this.Registration.ForeColor = System.Drawing.Color.Sienna;
+            this.Registration.ForeColor = System.Drawing.Color.Bisque;
             this.Registration.Name = "Registration";
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.textBoxName);
             this.groupBox2.Controls.Add(this.label2);
@@ -192,7 +200,7 @@ namespace FurnitureShop
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
+            this.BackColor = System.Drawing.Color.SaddleBrown;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Registration);
             this.Controls.Add(this.buttonRegister);

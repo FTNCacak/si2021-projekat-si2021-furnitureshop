@@ -553,7 +553,7 @@
     <value>4</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 81</value>
+    <value>378, 83</value>
   </data>
   <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -583,13 +583,13 @@
     <value>Segoe UI, 12pt</value>
   </data>
   <data name="buttonRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 327</value>
+    <value>221, 329</value>
   </data>
   <data name="buttonRegister.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="buttonRegister.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 32</value>
+    <value>218, 32</value>
   </data>
   <data name="buttonRegister.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -613,13 +613,13 @@
     <value>True</value>
   </data>
   <data name="Registration.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 26.25pt, style=Bold, Italic</value>
+    <value>Segoe UI, 26.25pt</value>
   </data>
   <data name="Registration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 18</value>
+    <value>234, 9</value>
   </data>
   <data name="Registration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 47</value>
+    <value>205, 47</value>
   </data>
   <data name="Registration.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -640,7 +640,7 @@
     <value>1</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 73</value>
+    <value>33, 81</value>
   </data>
   <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -649,7 +649,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 224</value>
+    <value>303, 227</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -673,7 +673,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>671, 370</value>
+    <value>671, 383</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 7.8pt</value>

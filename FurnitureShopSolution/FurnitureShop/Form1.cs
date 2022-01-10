@@ -17,9 +17,10 @@ namespace FurnitureShop
         private readonly ItemBusiness itemBusiness = new ItemBusiness();
         private readonly EmployeeBusiness employeeBusiness = new EmployeeBusiness();
         BindingList<Employee> emp;
-        public Form1()
+        public Form1(string User)
         {
             InitializeComponent();
+            labelUser.Text = User;
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -22,6 +22,7 @@ namespace FurnitureShop
         {
             this.employeeBusiness = new EmployeeBusiness();
             InitializeComponent();
+            textBoxPassword.PasswordChar = '●';
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace FurnitureShop
             }
             else
             {
-                MessageBox.Show("Succesful register!", "Information Correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
                 AdminVerification a = new AdminVerification(emp);
                 a.Show();
             }

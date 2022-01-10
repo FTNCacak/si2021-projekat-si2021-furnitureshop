@@ -33,11 +33,13 @@ namespace FurnitureShop
             this.labelUsername = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonLogIn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.pictureBoxShowPassword = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,16 +76,6 @@ namespace FurnitureShop
             this.label2.Size = new System.Drawing.Size(188, 37);
             this.label2.TabIndex = 2;
             this.label2.Text = "Furniture Shop";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::FurnitureShop.Properties.Resources.Thesquid_ink_Free_Flat_Sample_Armchair;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(94, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 37);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // textBoxUserName
             // 
@@ -132,12 +124,35 @@ namespace FurnitureShop
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Bisque;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // pictureBoxShowPassword
+            // 
+            this.pictureBoxShowPassword.BackgroundImage = global::FurnitureShop.Properties.Resources.eye_icon1;
+            this.pictureBoxShowPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxShowPassword.Location = new System.Drawing.Point(318, 155);
+            this.pictureBoxShowPassword.Name = "pictureBoxShowPassword";
+            this.pictureBoxShowPassword.Size = new System.Drawing.Size(18, 20);
+            this.pictureBoxShowPassword.TabIndex = 8;
+            this.pictureBoxShowPassword.TabStop = false;
+            this.pictureBoxShowPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxShowPassword_MouseDown);
+            this.pictureBoxShowPassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxShowPassword_MouseUp);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::FurnitureShop.Properties.Resources.Thesquid_ink_Free_Flat_Sample_Armchair;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(94, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 37);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SaddleBrown;
             this.ClientSize = new System.Drawing.Size(412, 263);
+            this.Controls.Add(this.pictureBoxShowPassword);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.buttonLogIn);
             this.Controls.Add(this.textBoxPassword);
@@ -150,6 +165,7 @@ namespace FurnitureShop
             this.Name = "LogIn";
             this.Text = "FurnitureShop - Login";
             this.Load += new System.EventHandler(this.LogIn_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,5 +182,6 @@ namespace FurnitureShop
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonLogIn;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.PictureBox pictureBoxShowPassword;
     }
 }
