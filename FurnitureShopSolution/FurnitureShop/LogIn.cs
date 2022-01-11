@@ -26,8 +26,6 @@ namespace FurnitureShop
             Register r = new Register();
             r.Show();
 
-            //hiding the LogIn form
-            this.Hide();
         }
 
         private void buttonLogIn_Click(object sender, EventArgs e)

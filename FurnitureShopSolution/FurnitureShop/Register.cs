@@ -17,7 +17,6 @@ namespace FurnitureShop
     public partial class Register : Form
     {
         private readonly EmployeeBusiness employeeBusiness;
-        
         public Register()
         {
             this.employeeBusiness = new EmployeeBusiness();
@@ -27,8 +26,6 @@ namespace FurnitureShop
 
         private void Register_Load(object sender, EventArgs e)
         {
-            LogIn l=new LogIn();
-            l.Close();
 
         }
 
@@ -80,7 +77,7 @@ namespace FurnitureShop
             else
             {
                
-                AdminVerification a = new AdminVerification(emp);
+                AdminVerification a = new AdminVerification(emp,this);
                 a.Show();
             }
 

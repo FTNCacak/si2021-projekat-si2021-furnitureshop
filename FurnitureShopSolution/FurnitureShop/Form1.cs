@@ -16,9 +16,10 @@ namespace FurnitureShop
     {
         private readonly ItemBusiness itemBusiness = new ItemBusiness();
         private readonly EmployeeBusiness employeeBusiness = new EmployeeBusiness();
-        BindingSource bs = new BindingSource(); 
+        BindingSource bs = new BindingSource();
+        BindingSource bs_employee = new BindingSource();
         DataTable dt = new DataTable();
-        BindingList<Employee> emp;
+        DataTable dt_employee= new DataTable();
         public Form1(string User)
         {
             InitializeComponent();
@@ -32,36 +33,48 @@ namespace FurnitureShop
 
             textBoxSearch.Clear();
 
-            emp = new BindingList<Employee>(employeeBusiness.GetAllEmployees());
-            dataGridEmployees.DataSource = emp;
-
             dt.Columns.Add("ProductName", typeof(string));
             dt.Columns.Add("ProductPrice", typeof(decimal));
             dt.Columns.Add("ProductColor", typeof(string));
             dt.Columns.Add("ProductDescription", typeof(string));
             dt.Columns.Add("ProductType", typeof(string));
-
             dt.Columns.Add("Category", typeof(string));
             dt.Columns.Add("Stock", typeof(int));
             dt.Columns.Add("Discount", typeof(int));
+
+            dt_employee.Columns.Add("EmployeeID", typeof(int));
+            dt_employee.Columns.Add("Name", typeof(string));
+            dt_employee.Columns.Add("Email", typeof(string));
+            dt_employee.Columns.Add("PhoneNumber", typeof(int));
+            dt_employee.Columns.Add("Address", typeof(string));
+            dt_employee.Columns.Add("Username", typeof(string));
+            dt_employee.Columns.Add("Password", typeof(string));
+            dt_employee.Columns.Add("Role", typeof(string));
+            dt_employee.Columns.Add("ManagerID", typeof(int));
 
             dataGridStock.DataSource = itemBusiness.GetInStockItems();
             listBoxItems.HorizontalScrollbar = true;
             foreach(var item in items)
               {
                 dt.Rows.Add(new object[] { item.ProductName, item.ProductPrice, item.ProductColor, item.ProductDescription, item.Type, item.Category, item.Stock, item.Discount });
-
                 listBoxItems.Items.Add(string.Format("{0} / Price:{1} / {2} / {3} / {4} / {5} / In stock:{6} / Discount:{7} ",item.ProductName,item.ProductPrice,item.ProductColor,item.ProductDescription,item.Type,item.Category, item.Stock, item.Discount));
               }
             bs.DataSource = dt;
             dataGridStock.DataSource = bs;
+
+            foreach (var employees in employeeBusiness.GetAllEmployees())
+            {
+                dt_employee.Rows.Add(new object[] { employees.EmployeeID, employees.Name, employees.Email, employees.PhoneNumber, employees.Address, employees.Username, employees.Password, employees.Role, employees.ManagerID });
+            }
+            bs_employee.DataSource = dt_employee;
+            dataGridEmployees.DataSource = bs_employee;
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            /*TODO prebaciti u data access layer*/
             bs.Filter =
                 string.Format("ProductName LIKE '%{0}%' OR ProductDescription LIKE '%{0}%' OR ProductColor LIKE '%{0}%'", textBoxSearch.Text);
-
         }
 
         private void buttonAddItem_Click(object sender, EventArgs e)
@@ -82,8 +95,21 @@ namespace FurnitureShop
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            
             employeeBusiness.DeleteEmployee(Convert.ToInt32(dataGridEmployees.SelectedRows[0].Cells[0].Value));
-            emp.RemoveAt(dataGridEmployees.SelectedRows[0].Index);
+            bs_employee.RemoveAt(dataGridEmployees.SelectedRows[0].Index);
+        }
+
+        private void buttonSearch2_Click(object sender, EventArgs e)
+        {
+            bs_employee.Filter =
+               string.Format("Name LIKE '%{0}%' OR Username LIKE '%{0}%' OR Role LIKE '%{0}%'", textBoxSearch2.Text);
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            Register r = new Register();
+            r.Show();
         }
     }
 }

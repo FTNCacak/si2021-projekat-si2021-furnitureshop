@@ -16,12 +16,14 @@ namespace FurnitureShop
     {
         private readonly EmployeeBusiness employeeBusiness;
         public Employee employee = new Employee();
+        public Register Register=new Register();
 
-        public AdminVerification(Employee e)
+        public AdminVerification(Employee e, Register r)
         {
             employeeBusiness = new EmployeeBusiness();
             InitializeComponent();
             employee = e;
+            Register = r;
         }
 
         private void AdminVerification_Load(object sender, EventArgs e)
@@ -48,11 +50,9 @@ namespace FurnitureShop
                         {
                             employeeBusiness.InsertEmployee(employee);
                             MessageBox.Show("Employee successfully added!", "Information Correct", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LogIn l = new LogIn();
-                            l.Show();
                             this.Hide();
                             pom = 1;
-
+                            Register.Close();
                         }
                     }
 
