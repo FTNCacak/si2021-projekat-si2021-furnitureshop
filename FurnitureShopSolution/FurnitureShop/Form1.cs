@@ -111,5 +111,11 @@ namespace FurnitureShop
             Register r = new Register();
             r.Show();
         }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            bs.Filter =
+                string.Format("ProductName LIKE '%{0}%' OR ProductColor LIKE '%{0}%'", textBoxSearch.Text);
+        }
     }
 }

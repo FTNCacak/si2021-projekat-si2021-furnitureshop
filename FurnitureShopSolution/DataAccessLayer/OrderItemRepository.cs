@@ -1,4 +1,5 @@
 ﻿using Shared;
+using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class OrderItemRepository
+    public class OrderItemRepository : IOrderItemRepository
     {
         public List<OrderItem> GetAllOrderItems()
         {
