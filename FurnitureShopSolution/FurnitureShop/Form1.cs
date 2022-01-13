@@ -1,4 +1,5 @@
 ﻿using BussniessLayer;
+using Shared.Interfaces.Business;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,9 @@ namespace FurnitureShop
 {
     public partial class Form1 : Form
     {
-        private readonly ItemBusiness itemBusiness = new ItemBusiness();
-        private readonly EmployeeBusiness employeeBusiness = new EmployeeBusiness();
+        private readonly IItemBusiness itemBusiness = new ItemBusiness();
+        private readonly IEmployeeBusiness employeeBusiness = new EmployeeBusiness();
+
         BindingSource bs = new BindingSource();
         BindingSource bs_employee = new BindingSource();
         DataTable dt = new DataTable();
@@ -105,6 +107,7 @@ namespace FurnitureShop
             bs_employee.Filter =
                string.Format("Name LIKE '%{0}%' OR Username LIKE '%{0}%' OR Role LIKE '%{0}%'", textBoxSearch2.Text);
         }
+        
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -116,6 +119,18 @@ namespace FurnitureShop
         {
             bs.Filter =
                 string.Format("ProductName LIKE '%{0}%' OR ProductColor LIKE '%{0}%'", textBoxSearch.Text);
+        }
+
+        private void textBoxSearch2_TextChanged_1(object sender, EventArgs e)
+        {
+            bs_employee.Filter =
+               string.Format("Name LIKE '%{0}%' OR Username LIKE '%{0}%' OR Role LIKE '%{0}%'", textBoxSearch2.Text);
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //this.Close();
+            Environment.Exit(1);
         }
     }
 }

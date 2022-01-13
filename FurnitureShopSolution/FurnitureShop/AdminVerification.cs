@@ -1,4 +1,5 @@
 ﻿using BussniessLayer;
+using Shared.Interfaces.Business;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace FurnitureShop
 {
     public partial class AdminVerification : Form
     {
-        private readonly EmployeeBusiness employeeBusiness;
+        private readonly IEmployeeBusiness employeeBusiness;
         public Employee employee = new Employee();
         public Register Register=new Register();
 

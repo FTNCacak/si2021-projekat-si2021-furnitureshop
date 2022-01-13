@@ -1,4 +1,5 @@
 ﻿using BussniessLayer;
+using Shared.Interfaces.Business;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace FurnitureShop
 {
     public partial class LogIn : Form
     {
-        private readonly EmployeeBusiness employeeBusiness = new EmployeeBusiness();
+        private readonly IEmployeeBusiness employeeBusiness = new EmployeeBusiness();
         public LogIn()
         {
             InitializeComponent();

@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer;
 using Shared.Interfaces.Business;
+using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace BussniessLayer
 {
     public class EmployeeBusiness : IEmployeeBusiness
     {
-        private readonly EmployeeRepository employeeRepository = new EmployeeRepository();
+        private readonly IEmployeeRepository employeeRepository = new EmployeeRepository();
 
         public List<Employee> GetAllEmployees()
         {

@@ -385,6 +385,7 @@
             this.textBoxSearch2.Name = "textBoxSearch2";
             this.textBoxSearch2.Size = new System.Drawing.Size(314, 30);
             this.textBoxSearch2.TabIndex = 6;
+            this.textBoxSearch2.TextChanged += new System.EventHandler(this.textBoxSearch2_TextChanged_1);
             // 
             // buttonSearch2
             // 
@@ -495,6 +496,7 @@
             this.Name = "Form1";
             this.Text = "Furniture Shop";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControlMenu.ResumeLayout(false);
             this.HomeTab.ResumeLayout(false);

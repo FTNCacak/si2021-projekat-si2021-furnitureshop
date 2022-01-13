@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer;
 using Shared.Interfaces.Business;
+using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace BussniessLayer
 {
     public class OrderBusiness : IOrderBusiness
     {
-        private readonly OrderRepository OrderRepository = new OrderRepository();
+        private readonly IOrderRepository OrderRepository = new OrderRepository();
 
         public List<Order> GetAllOrders()
         {

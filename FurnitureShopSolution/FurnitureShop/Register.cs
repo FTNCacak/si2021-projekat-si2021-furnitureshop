@@ -1,5 +1,6 @@
 ﻿using BussniessLayer;
 using Shared;
+using Shared.Interfaces.Business;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace FurnitureShop
 {
     public partial class Register : Form
     {
-        private readonly EmployeeBusiness employeeBusiness;
+        private readonly IEmployeeBusiness employeeBusiness;
         public Register()
         {
             this.employeeBusiness = new EmployeeBusiness();
