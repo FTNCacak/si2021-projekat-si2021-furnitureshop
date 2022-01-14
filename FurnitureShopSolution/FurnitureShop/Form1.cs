@@ -1,5 +1,7 @@
 ﻿using BussniessLayer;
+using DataAccessLayer;
 using Shared.Interfaces.Business;
+using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -15,8 +17,8 @@ namespace FurnitureShop
 {
     public partial class Form1 : Form
     {
-        private readonly IItemBusiness itemBusiness = new ItemBusiness();
-        private readonly IEmployeeBusiness employeeBusiness = new EmployeeBusiness();
+        private readonly IItemBusiness itemBusiness;
+        private readonly IEmployeeBusiness employeeBusiness;
 
         BindingSource bs = new BindingSource();
         BindingSource bs_employee = new BindingSource();
@@ -25,6 +27,12 @@ namespace FurnitureShop
         public Form1(string User)
         {
             InitializeComponent();
+
+            IEmployeeRepository _employeeRepository = new EmployeeRepository();
+            this.employeeBusiness = new EmployeeBusiness(_employeeRepository);
+
+            IItemRepository _itemRepository = new ItemRepository();
+            this.itemBusiness = new ItemBusiness(_itemRepository);
             labelUser.Text = User;
         }
 

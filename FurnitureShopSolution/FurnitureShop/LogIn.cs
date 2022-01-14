@@ -1,5 +1,7 @@
 ﻿using BussniessLayer;
+using DataAccessLayer;
 using Shared.Interfaces.Business;
+using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -15,10 +17,15 @@ namespace FurnitureShop
 {
     public partial class LogIn : Form
     {
-        private readonly IEmployeeBusiness employeeBusiness = new EmployeeBusiness();
+        private readonly IEmployeeBusiness employeeBusiness;
         public LogIn()
         {
+           
             InitializeComponent();
+
+            IEmployeeRepository employeeRepository = new EmployeeRepository();
+            this.employeeBusiness = new EmployeeBusiness(employeeRepository);
+
             textBoxPassword.PasswordChar = '●';
         }
 

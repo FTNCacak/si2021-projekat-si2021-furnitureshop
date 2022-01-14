@@ -12,7 +12,12 @@ namespace BussniessLayer
 {
     public class EmployeeBusiness : IEmployeeBusiness
     {
-        private readonly IEmployeeRepository employeeRepository = new EmployeeRepository();
+        private readonly IEmployeeRepository employeeRepository;
+
+        public EmployeeBusiness(IEmployeeRepository _employeeRepository)
+        {
+            employeeRepository = _employeeRepository;
+        }
 
         public List<Employee> GetAllEmployees()
         {

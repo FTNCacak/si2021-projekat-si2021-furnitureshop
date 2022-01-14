@@ -1,5 +1,7 @@
 ﻿using BussniessLayer;
+using DataAccessLayer;
 using Shared.Interfaces.Business;
+using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -17,12 +19,15 @@ namespace FurnitureShop
     {
         private readonly IEmployeeBusiness employeeBusiness;
         public Employee employee = new Employee();
-        public Register Register=new Register();
+        public Register Register = new Register();
 
         public AdminVerification(Employee e, Register r)
         {
-            employeeBusiness = new EmployeeBusiness();
+            //employeeBusiness = new EmployeeBusiness();
             InitializeComponent();
+            IEmployeeRepository employeeRepository = new EmployeeRepository();
+            this.employeeBusiness = new EmployeeBusiness(employeeRepository);
+
             employee = e;
             Register = r;
         }

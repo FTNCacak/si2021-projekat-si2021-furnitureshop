@@ -12,7 +12,12 @@ namespace BussniessLayer
 {
     public class OrderItemBusiness : IOrderItemBusiness
     {
-        private readonly IOrderItemRepository OrderItemRepository = new OrderItemRepository();
+        private readonly IOrderItemRepository OrderItemRepository;
+
+        public OrderItemBusiness(IOrderItemRepository _OrderItemRepository)
+        {
+             this.OrderItemRepository = _OrderItemRepository;
+        }
 
         public List<OrderItem> GetAllOrderItems()
         {

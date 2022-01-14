@@ -12,7 +12,12 @@ namespace BussniessLayer
 {
     public class ItemBusiness : IItemBusiness
     {
-        private readonly IItemRepository ItemRepository = new ItemRepository();
+        private readonly IItemRepository ItemRepository;
+
+        public ItemBusiness(IItemRepository _ItemRepository)
+        {
+            this.ItemRepository = _ItemRepository;
+        }
 
         public List<Item> GetAllItems()
         {

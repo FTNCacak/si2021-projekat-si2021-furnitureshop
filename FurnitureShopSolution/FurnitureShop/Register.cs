@@ -1,6 +1,8 @@
 ﻿using BussniessLayer;
+using DataAccessLayer;
 using Shared;
 using Shared.Interfaces.Business;
+using Shared.Interfaces.Repository;
 using Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -20,8 +22,12 @@ namespace FurnitureShop
         private readonly IEmployeeBusiness employeeBusiness;
         public Register()
         {
-            this.employeeBusiness = new EmployeeBusiness();
             InitializeComponent();
+
+            IEmployeeRepository employeeRepository = new EmployeeRepository();
+            this.employeeBusiness = new EmployeeBusiness(employeeRepository);
+
+
             textBoxPassword.PasswordChar = '●';
         }
 
