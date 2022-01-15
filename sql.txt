@@ -5,15 +5,6 @@ INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Ad
 INSERT INTO [dbo].[Employees] ([EmployeeID], [Name], [Email], [PhoneNumber], [Address], [Username], [Password], [Role], [ManagerID]) VALUES (117, N'Dragan', N'dragan@gmail.com', 51354843, N'Holivud bb', N'gidracar', N'4455', N'Direktor', NULL)
 SET IDENTITY_INSERT [dbo].[Employees] OFF
 
-SET IDENTITY_INSERT [dbo].[Orders] ON
-INSERT INTO [dbo].[Orders] ([OrderID], [OrderItemID], [EmployeeID], [OrderDate], [Bill]) VALUES (5001, 1, 114, N'2019-08-08', CAST(1600.00 AS Decimal(16, 2)))
-SET IDENTITY_INSERT [dbo].[Orders] OFF
-
-SET IDENTITY_INSERT [dbo].[OrderItems] ON
-INSERT INTO [dbo].[OrderItems] ([OrderItemID], [ItemID], [Quantity]) VALUES (1, 1000, 4)
-INSERT INTO [dbo].[OrderItems] ([OrderItemID], [ItemID], [Quantity]) VALUES (2, 1001, 1)
-SET IDENTITY_INSERT [dbo].[OrderItems] OFF
-
 SET IDENTITY_INSERT [dbo].[Items] ON
 INSERT INTO [dbo].[Items] ([ItemID], [ProductName], [ProductPrice], [ProductColor], [ProductDescription], [Type], [Category], [Stock], [Discount]) VALUES (1000, N'Office chair', CAST(150.00 AS Decimal(16, 2)), N'brown', N'some description', N'wood', N'office', 40, 5)
 INSERT INTO [dbo].[Items] ([ItemID], [ProductName], [ProductPrice], [ProductColor], [ProductDescription], [Type], [Category], [Stock], [Discount]) VALUES (1001, N'Desk', CAST(300.00 AS Decimal(16, 2)), N'silver', N'some description', N'metak', N'bedroom', 60, NULL)
@@ -50,20 +41,21 @@ CREATE TABLE [dbo].[OrderItems] (
     [OrderItemID] INT IDENTITY (1, 1) NOT NULL,
     [ItemID]      INT NOT NULL,
     [Quantity]    INT NOT NULL,
+    [OrderID]     INT NOT NULL,
     PRIMARY KEY CLUSTERED ([OrderItemID] ASC),
+    CONSTRAINT [FK_OrderItems_ToOrder] FOREIGN KEY ([OrderID]) REFERENCES [dbo].[Orders] ([OrderID]),
     CONSTRAINT [FK_OrderItems_ToItems] FOREIGN KEY ([ItemID]) REFERENCES [dbo].[Items] ([ItemID])
 );
 
 CREATE TABLE [dbo].[Orders] (
-    [OrderID]     INT             IDENTITY (5000, 1) NOT NULL,
-    [OrderItemID] INT             NOT NULL,
-    [EmployeeID]  INT             NOT NULL,
-    [OrderDate]   DATE            NOT NULL,
-    [Bill]        DECIMAL (16, 2) NOT NULL,
+    [OrderID]    INT             IDENTITY (5000, 1) NOT NULL,
+    [EmployeeID] INT             NOT NULL,
+    [OrderDate]  DATE            NOT NULL,
+    [Bill]       DECIMAL (16, 2) NOT NULL,
     PRIMARY KEY CLUSTERED ([OrderID] ASC),
-    CONSTRAINT [FK_Orders_Employye] FOREIGN KEY ([EmployeeID]) REFERENCES [dbo].[Employees] ([EmployeeID]),
-    CONSTRAINT [FK_Orders_OrderItem] FOREIGN KEY ([OrderItemID]) REFERENCES [dbo].[OrderItems] ([OrderItemID])
+    CONSTRAINT [FK_Orders_Employye] FOREIGN KEY ([EmployeeID]) REFERENCES [dbo].[Employees] ([EmployeeID])
 );
+
 
 
 
