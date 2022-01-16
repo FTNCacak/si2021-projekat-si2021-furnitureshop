@@ -163,6 +163,7 @@ namespace FurnitureShop
             this.Controls.Add(this.labelUsername);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LogIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FurnitureShop - Login";
             this.Load += new System.EventHandler(this.LogIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPassword)).EndInit();
