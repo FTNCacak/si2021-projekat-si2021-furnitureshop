@@ -209,6 +209,7 @@ namespace FurnitureShop
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Register";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Register_FormClosing);
             this.Load += new System.EventHandler(this.Register_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

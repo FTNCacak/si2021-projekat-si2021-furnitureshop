@@ -73,6 +73,16 @@ namespace FurnitureShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_refresh_1_icon {
+            get {
+                object obj = ResourceManager.GetObject("arrow-refresh-1-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Custom_Icon_Design_Mono_General_2_Search {
             get {
                 object obj = ResourceManager.GetObject("Custom-Icon-Design-Mono-General-2-Search", resourceCulture);
@@ -116,6 +126,16 @@ namespace FurnitureShop.Properties {
         internal static System.Drawing.Bitmap eye_icon1 {
             get {
                 object obj = ResourceManager.GetObject("eye-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refresh_icon {
+            get {
+                object obj = ResourceManager.GetObject("Refresh-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

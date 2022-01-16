@@ -29,8 +29,9 @@ namespace DataAccessLayer
                 {
                     OrderItem orderItem = new OrderItem();
                     orderItem.OrderItemID = sqlDataReader.GetInt32(0);
-                    orderItem.ItemID = sqlDataReader.GetInt32(0);
-                    orderItem.Quantity = sqlDataReader.GetInt32(0);
+                    orderItem.ItemID = sqlDataReader.GetInt32(1);
+                    orderItem.Quantity = sqlDataReader.GetInt32(2);
+                   // orderItem.OrderID = sqlDataReader.GetInt32(3);
                     orderItems.Add(orderItem);
                 }
 
@@ -45,8 +46,9 @@ namespace DataAccessLayer
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = sqlConnection;
                 sqlCommand.CommandText =
-                string.Format("INSERT INTO OrderItems VALUES({0},{1})",
+                string.Format("INSERT INTO OrderItems VALUES({0},{1},{2})",
                     oi.ItemID, oi.Quantity);
+                   // ,oi.OrderID);
                 sqlConnection.Open();
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
@@ -61,13 +63,11 @@ namespace DataAccessLayer
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
                 //proveriti logiku sql upita ispod
-                string command = "UPDATE OrderItems SET Quantity=@Quantity WHERE OrderItemID=@OrderItemIDItemID=@ItemID";
+                string command = "UPDATE OrderItems SET Quantity=@Quantity WHERE OrderItemID=@OrderItemID";
 
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@OrderItemID", OrderItem.OrderItemID);
-                sqlCommand.Parameters.AddWithValue("@ItemID", OrderItem.ItemID);
                 sqlCommand.Parameters.AddWithValue("@Quantity", OrderItem.Quantity);
-                
 
                 sqlConnection.Open();
 

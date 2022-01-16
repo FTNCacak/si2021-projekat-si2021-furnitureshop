@@ -59,6 +59,8 @@ namespace FurnitureShop
                             this.Hide();
                             pom = 1;
                             Register.Close();
+                            
+                            
                         }
                     }
 

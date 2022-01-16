@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,14 @@ namespace FurnitureShop
     {
         private readonly IItemBusiness itemBusiness;
         private readonly IEmployeeBusiness employeeBusiness;
+        private readonly IOrderBusiness orderBusiness;
+        private readonly IOrderItemBusiness orderItemBusiness;
 
         BindingSource bs = new BindingSource();
         BindingSource bs_employee = new BindingSource();
         DataTable dt = new DataTable();
         DataTable dt_employee= new DataTable();
-        public Form1(string User)
+        public Form1(string Username)
         {
             InitializeComponent();
 
@@ -33,7 +36,16 @@ namespace FurnitureShop
 
             IItemRepository _itemRepository = new ItemRepository();
             this.itemBusiness = new ItemBusiness(_itemRepository);
-            labelUser.Text = User;
+
+            IOrderItemRepository _orderItemRepository = new OrderItemRepository();
+            this.orderItemBusiness = new OrderItemBusiness(_orderItemRepository);
+
+            IOrderRepository _orderRepository = new OrderRepository();
+            this.orderBusiness = new OrderBusiness(_orderRepository);
+
+            labelUser.Text = Username;
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -62,24 +74,35 @@ namespace FurnitureShop
             dt_employee.Columns.Add("Role", typeof(string));
             dt_employee.Columns.Add("ManagerID", typeof(int));
 
+
             dataGridStock.DataSource = itemBusiness.GetInStockItems();
             listBoxItems.HorizontalScrollbar = true;
             foreach(var item in items)
               {
                 dt.Rows.Add(new object[] { item.ProductName, item.ProductPrice, item.ProductColor, item.ProductDescription, item.Type, item.Category, item.Stock, item.Discount });
-                listBoxItems.Items.Add(string.Format("{0} / Price:{1} / {2} / {3} / {4} / {5} / In stock:{6} / Discount:{7} ",item.ProductName,item.ProductPrice,item.ProductColor,item.ProductDescription,item.Type,item.Category, item.Stock, item.Discount));
+                listBoxItems.Items.Add(string.Format("{0}| {1} / Price:{2} / {3} / {4} / {5} / {6} / In stock:{7} / Discount:{8} ",item.ItemID,item.ProductName,item.ProductPrice,item.ProductColor,item.ProductDescription,item.Type,item.Category, item.Stock, item.Discount));
               }
             bs.DataSource = dt;
             dataGridStock.DataSource = bs;
 
-            foreach (var employees in employeeBusiness.GetAllEmployees())
+            refreshDataGridEmployee();
+            
+            
+        }
+        private void refreshDataGridEmployee()
+        {
+            List<Employee> Employees = new List<Employee>();
+            Employees = employeeBusiness.GetAllEmployees();
+            dataGridEmployees.DataSource = null;
+            bs_employee.DataSource = null;
+            dt_employee.Clear();
+            foreach (var employees in Employees)
             {
                 dt_employee.Rows.Add(new object[] { employees.EmployeeID, employees.Name, employees.Email, employees.PhoneNumber, employees.Address, employees.Username, employees.Password, employees.Role, employees.ManagerID });
             }
             bs_employee.DataSource = dt_employee;
             dataGridEmployees.DataSource = bs_employee;
         }
-
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             /*TODO prebaciti u data access layer*/
@@ -89,10 +112,26 @@ namespace FurnitureShop
 
         private void buttonAddItem_Click(object sender, EventArgs e)
         {
+            decimal bill = decimal.Parse(labelBill.Text);
+
             if(listBoxItems.SelectedItems.Count > 0)
             {
                 listBoxCart.Items.Add(listBoxItems.SelectedItem);
+
+                string selectedItem = listBoxItems.SelectedItem.ToString();
+                int position = selectedItem.IndexOf("|");
+                selectedItem = selectedItem.Substring(0, position);
+
+                foreach (var item in itemBusiness.GetAllItems())
+                {
+                    if(item.ItemID == double.Parse(selectedItem))
+                    {
+                        bill += item.ProductPrice;
+                    }
+                }
+                labelBill.Text = bill.ToString();
             }
+            
         }
 
         private void buttonRemoveItem_Click(object sender, EventArgs e)
@@ -109,18 +148,31 @@ namespace FurnitureShop
             employeeBusiness.DeleteEmployee(Convert.ToInt32(dataGridEmployees.SelectedRows[0].Cells[0].Value));
             bs_employee.RemoveAt(dataGridEmployees.SelectedRows[0].Index);
         }
-
+        
         private void buttonSearch2_Click(object sender, EventArgs e)
         {
+            
             bs_employee.Filter =
                string.Format("Name LIKE '%{0}%' OR Username LIKE '%{0}%' OR Role LIKE '%{0}%'", textBoxSearch2.Text);
         }
         
+        public static bool FormIsOpen(FormCollection application, Type formType)
+        {
+            return Application.OpenForms.Cast<Form>().Any(openForm => openForm.GetType() == formType);
+        }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             Register r = new Register();
             r.Show();
+            if(FormIsOpen(Application.OpenForms,typeof(Register))==false)
+             {
+                refreshDataGridEmployee();
+            }
+
+
+
+
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
@@ -139,6 +191,36 @@ namespace FurnitureShop
         {
             //this.Close();
             Environment.Exit(1);
+        }
+
+        private void buttonSell_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Please confirm your sale!", "Confirm sale", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == System.Windows.Forms.DialogResult.Yes)
+            {
+                /*OrderItem oI = new OrderItem();
+                oI.ItemID =
+
+
+                Order o = new Order();
+                foreach(var employee in employeeBusiness.GetAllEmployees())
+                {
+                    if(employee.Username.Equals(labelUser.Text))
+                    {
+                        o.EmployeeID = employee.EmployeeID;
+                    }
+                }
+                o.OrderDate = DateTime.Now;
+                o.Bill = decimal.Parse(labelBill.Text);
+                //o.OrderItemID
+                */
+            }
+
+        }
+
+        private void pictureBoxRefresh_Click(object sender, EventArgs e)
+        {
+            refreshDataGridEmployee();
         }
     }
 }

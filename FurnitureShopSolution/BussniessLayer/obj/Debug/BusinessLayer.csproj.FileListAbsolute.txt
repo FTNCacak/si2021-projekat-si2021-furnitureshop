@@ -31,3 +31,14 @@ C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolutio
 C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.dll
 C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.pdb
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\bin\Debug\BussniessLayer.dll
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\bin\Debug\BussniessLayer.pdb
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\bin\Debug\DataAccessLayer.dll
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\bin\Debug\Shared.dll
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\bin\Debug\DataAccessLayer.pdb
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\bin\Debug\Shared.pdb
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.dll
+C:\FurnitureShop_\FurnitureShopSolution\BussniessLayer\obj\Debug\BussniessLayer.pdb

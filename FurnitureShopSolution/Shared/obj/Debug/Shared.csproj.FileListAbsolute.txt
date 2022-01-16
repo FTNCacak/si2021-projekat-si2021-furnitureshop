@@ -16,3 +16,9 @@ C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolutio
 C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
 C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\Shared\obj\Debug\Shared.dll
 C:\Users\coa\Documents\si2021-projekat-si2021-furnitureshop\FurnitureShopSolution\Shared\obj\Debug\Shared.pdb
+C:\FurnitureShop_\FurnitureShopSolution\Shared\bin\Debug\Shared.dll
+C:\FurnitureShop_\FurnitureShopSolution\Shared\bin\Debug\Shared.pdb
+C:\FurnitureShop_\FurnitureShopSolution\Shared\obj\Debug\Shared.csproj.AssemblyReference.cache
+C:\FurnitureShop_\FurnitureShopSolution\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
+C:\FurnitureShop_\FurnitureShopSolution\Shared\obj\Debug\Shared.dll
+C:\FurnitureShop_\FurnitureShopSolution\Shared\obj\Debug\Shared.pdb

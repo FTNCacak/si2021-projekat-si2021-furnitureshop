@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminVerification));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAVusername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,7 +55,7 @@
             // textBoxAVusername
             // 
             this.textBoxAVusername.Location = new System.Drawing.Point(88, 47);
-            this.textBoxAVusername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAVusername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAVusername.Name = "textBoxAVusername";
             this.textBoxAVusername.Size = new System.Drawing.Size(113, 20);
             this.textBoxAVusername.TabIndex = 1;
@@ -75,7 +76,7 @@
             // textBoxAVpassword
             // 
             this.textBoxAVpassword.Location = new System.Drawing.Point(88, 89);
-            this.textBoxAVpassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAVpassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAVpassword.Name = "textBoxAVpassword";
             this.textBoxAVpassword.Size = new System.Drawing.Size(113, 20);
             this.textBoxAVpassword.TabIndex = 3;
@@ -88,7 +89,7 @@
             this.buttonRegister.ForeColor = System.Drawing.Color.Bisque;
             this.buttonRegister.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.buttonRegister.Location = new System.Drawing.Point(57, 137);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRegister.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(122, 37);
             this.buttonRegister.TabIndex = 18;
@@ -134,7 +135,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxAVusername);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminVerification";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.AdminVerification_Load);
