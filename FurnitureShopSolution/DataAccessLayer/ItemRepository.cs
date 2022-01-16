@@ -47,6 +47,10 @@ namespace DataAccessLayer
             return items;
         }
 
+        public List<Item> GetInStockItems()
+        {
+            return GetAllItems().Where(i => i.Stock > 0).ToList();
+        }
         public int InsertItem(Item i)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))

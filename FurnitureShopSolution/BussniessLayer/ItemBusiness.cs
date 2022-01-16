@@ -25,7 +25,7 @@ namespace BussniessLayer
         }
         public List<Item> GetInStockItems()
         {
-            return ItemRepository.GetAllItems().Where(i=>i.Stock>0).ToList();
+            return ItemRepository.GetInStockItems().Where(i=>i.Stock>0).ToList();
         }
 
         public bool InsertItem(Item i)

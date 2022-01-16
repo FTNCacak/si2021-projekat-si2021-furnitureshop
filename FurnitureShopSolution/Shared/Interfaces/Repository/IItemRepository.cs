@@ -10,6 +10,7 @@ namespace Shared.Interfaces.Repository
     public interface IItemRepository
     {
         List<Item> GetAllItems();
+        List<Item> GetInStockItems();
         int InsertItem(Item i);
         int UpdateItem(Item item);
         void DeleteItem(int itemid);
