@@ -12,6 +12,6 @@ namespace Shared.Interfaces.Business
         List<Order> GetAllOrders();
         bool InsertOrder(Order o);
         int UpdateOrder(Order Order);
-        void DeleteOrder(int order);
+        int DeleteOrder(int order);
     }
 }

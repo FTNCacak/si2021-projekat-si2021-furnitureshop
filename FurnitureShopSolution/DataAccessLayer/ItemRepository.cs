@@ -91,7 +91,7 @@ namespace DataAccessLayer
 
             }
         }
-        public void DeleteItem(int itemid)
+        public int DeleteItem(int itemid)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
@@ -101,6 +101,10 @@ namespace DataAccessLayer
                     sqlCommand.Connection = sqlConnection;
                     sqlCommand.CommandText = "DELETE FROM Items WHERE ItemID = @ItemID";
                     sqlCommand.Parameters.AddWithValue("@ItemID", itemid);
+
+                    sqlConnection.Open();
+
+                    return sqlCommand.ExecuteNonQuery();
                 }
             }
         }

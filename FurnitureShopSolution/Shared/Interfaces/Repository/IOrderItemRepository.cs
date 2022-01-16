@@ -12,7 +12,7 @@ namespace Shared.Interfaces.Repository
         List<OrderItem> GetAllOrderItems();
         int InsertOrderItem(OrderItem oi);
         int UpdateOrderItem(OrderItem OrderItem);
-        void DeleteOrderItem(int orderitemid);
+        int DeleteOrderItem(int orderitemid);
 
     }
 }

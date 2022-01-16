@@ -13,6 +13,6 @@ namespace Shared.Interfaces.Repository
         List<Item> GetInStockItems();
         int InsertItem(Item i);
         int UpdateItem(Item item);
-        void DeleteItem(int itemid);
+        int DeleteItem(int itemid);
     }
 }

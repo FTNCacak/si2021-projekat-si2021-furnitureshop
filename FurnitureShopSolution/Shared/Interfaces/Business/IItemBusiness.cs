@@ -13,7 +13,7 @@ namespace Shared.Interfaces.Business
         List<Item> GetInStockItems();
         bool InsertItem(Item i);
         int UpdateItem(Item Item);
-        void DeleteItem(int item);
+        int DeleteItem(int item);
 
     }
 }

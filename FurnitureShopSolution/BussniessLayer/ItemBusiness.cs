@@ -38,9 +38,9 @@ namespace BussniessLayer
         {
             return ItemRepository.UpdateItem(Item);
         }
-        public void DeleteItem(int item)
+        public int DeleteItem(int item)
         {
-            ItemRepository.DeleteItem(item);
+            return ItemRepository.DeleteItem(item);
         }
     }
 }

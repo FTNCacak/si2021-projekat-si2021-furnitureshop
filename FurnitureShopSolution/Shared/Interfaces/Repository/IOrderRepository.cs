@@ -12,7 +12,7 @@ namespace Shared.Interfaces.Repository
         List<Order> GetAllOrders();
         int InsertOrder(Order o);
         int UpdateOrder(Order Order);
-        void DeleteOrder(int order);
+        int DeleteOrder(int order);
 
     }
 }

@@ -25,7 +25,12 @@
       "ProjectGuid": "e5064998-f1b3-4a64-9830-127492c74a35",
       "DisplayName": "Shared",
       "ColorIndex": 3
+    },
+    "76dd67ec-6bfd-499d-8fc1-8943953dd825": {
+      "ProjectGuid": "76dd67ec-6bfd-499d-8fc1-8943953dd825",
+      "DisplayName": "BusinessLayerTest",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }
