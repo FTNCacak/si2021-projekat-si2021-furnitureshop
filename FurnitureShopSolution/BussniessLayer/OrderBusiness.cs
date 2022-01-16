@@ -34,9 +34,9 @@ namespace BussniessLayer
         {
             return OrderRepository.UpdateOrder(Order);
         }
-        public void DeleteOrder(int order)
+        public int DeleteOrder(int order)
         {
-            OrderRepository.DeleteOrder(order);
+            return OrderRepository.DeleteOrder(order);
         }
     }
 }

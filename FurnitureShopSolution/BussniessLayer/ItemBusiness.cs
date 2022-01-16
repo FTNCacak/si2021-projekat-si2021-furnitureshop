@@ -25,7 +25,7 @@ namespace BussniessLayer
         }
         public List<Item> GetInStockItems()
         {
-            return ItemRepository.GetAllItems().Where(i=>i.Stock>0).ToList();
+            return ItemRepository.GetInStockItems();
         }
 
         public bool InsertItem(Item i)
@@ -38,9 +38,9 @@ namespace BussniessLayer
         {
             return ItemRepository.UpdateItem(Item);
         }
-        public void DeleteItem(int item)
+        public int DeleteItem(int item)
         {
-            ItemRepository.DeleteItem(item);
+            return ItemRepository.DeleteItem(item);
         }
     }
 }

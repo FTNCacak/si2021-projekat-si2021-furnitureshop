@@ -87,7 +87,14 @@ namespace DataAccessLayer
 
             }
         }
-        public void DeleteItem(int itemid)
+
+        public List<Item> GetInStockItems()
+        {
+            return GetAllItems().Where(i => i.Stock > 0).ToList();
+        }
+
+
+        public int DeleteItem(int itemid)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
@@ -97,6 +104,8 @@ namespace DataAccessLayer
                     sqlCommand.Connection = sqlConnection;
                     sqlCommand.CommandText = "DELETE FROM Items WHERE ItemID = @ItemID";
                     sqlCommand.Parameters.AddWithValue("@ItemID", itemid);
+
+                    return sqlCommand.ExecuteNonQuery();
                 }
             }
         }

@@ -12,6 +12,6 @@ namespace Shared.Interfaces.Business
         List<OrderItem> GetAllOrderItems();
         bool InsertOrderItem(OrderItem oi);
         int UpdateOrderItem(OrderItem OrderItem);
-        void DeleteItemsOrder(int itemorder);
+        int DeleteItemsOrder(int itemorder);
     }
 }

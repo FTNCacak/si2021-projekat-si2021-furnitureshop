@@ -23,10 +23,10 @@ namespace FurnitureShop
         private readonly IOrderBusiness orderBusiness;
         private readonly IOrderItemBusiness orderItemBusiness;
 
-        BindingSource bs = new BindingSource();
-        BindingSource bs_employee = new BindingSource();
-        DataTable dt = new DataTable();
-        DataTable dt_employee= new DataTable();
+        readonly BindingSource bs = new BindingSource();
+        readonly BindingSource bs_employee = new BindingSource();
+        readonly DataTable dt = new DataTable();
+        readonly DataTable dt_employee = new DataTable();
         public Form1(string Username)
         {
             InitializeComponent();

@@ -11,7 +11,8 @@ namespace Shared.Interfaces.Repository
     {
         List<Item> GetAllItems();
         int InsertItem(Item i);
+        List<Item> GetInStockItems();
         int UpdateItem(Item item);
-        void DeleteItem(int itemid);
+        int DeleteItem(int itemid);
     }
 }
