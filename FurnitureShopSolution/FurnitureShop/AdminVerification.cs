@@ -23,7 +23,6 @@ namespace FurnitureShop
 
         public AdminVerification(Employee e, Register r)
         {
-            //employeeBusiness = new EmployeeBusiness();
             InitializeComponent();
             IEmployeeRepository employeeRepository = new EmployeeRepository();
             this.employeeBusiness = new EmployeeBusiness(employeeRepository);
@@ -60,11 +59,11 @@ namespace FurnitureShop
                             pom = 1;
                             Register.Close();
                             
-                            
                         }
                     }
 
                 }
+                
                 if (pom != 1)
                 {
                     MessageBox.Show("Account with password and username you provided does't exist or doesn't have \"administrator\" role. Please try again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -83,5 +82,7 @@ namespace FurnitureShop
         {
             textBoxAVpassword.PasswordChar = '●';
         }
+
+        
     }
 }

@@ -23,7 +23,6 @@ namespace FurnitureShop
         public Register()
         {
             InitializeComponent();
-
             IEmployeeRepository employeeRepository = new EmployeeRepository();
             this.employeeBusiness = new EmployeeBusiness(employeeRepository);
 
@@ -85,7 +84,7 @@ namespace FurnitureShop
             {
                
                 AdminVerification a = new AdminVerification(emp,this);
-                a.Show();
+                a.ShowDialog();
             }
 
 

@@ -91,12 +91,12 @@ namespace FurnitureShop
         }
         private void refreshDataGridEmployee()
         {
-            List<Employee> Employees = new List<Employee>();
-            Employees = employeeBusiness.GetAllEmployees();
+            List<Employee> _employees = new List<Employee>();
+            _employees = employeeBusiness.GetAllEmployees();
             dataGridEmployees.DataSource = null;
             bs_employee.DataSource = null;
             dt_employee.Clear();
-            foreach (var employees in Employees)
+            foreach (var employees in _employees)
             {
                 dt_employee.Rows.Add(new object[] { employees.EmployeeID, employees.Name, employees.Email, employees.PhoneNumber, employees.Address, employees.Username, employees.Password, employees.Role, employees.ManagerID });
             }
@@ -164,7 +164,7 @@ namespace FurnitureShop
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             Register r = new Register();
-            r.Show();
+            r.ShowDialog();
             if(FormIsOpen(Application.OpenForms,typeof(Register))==false)
              {
                 refreshDataGridEmployee();
@@ -214,6 +214,7 @@ namespace FurnitureShop
                 o.Bill = decimal.Parse(labelBill.Text);
                 //o.OrderItemID
                 */
+                ;
             }
 
         }
@@ -221,6 +222,54 @@ namespace FurnitureShop
         private void pictureBoxRefresh_Click(object sender, EventArgs e)
         {
             refreshDataGridEmployee();
+        }
+
+        private void button_insertSupply_Click(object sender, EventArgs e)
+        {
+            string productName = textBox_productName.Text;
+            string productType = textBox_productType.Text;
+            string productColor = textBox_productColor.Text;
+            string productDescription = textBox_productDescription.Text;
+            decimal productPrice = Convert.ToDecimal(textBox_productPrice.Text.Trim());
+            string productCategory = textBox_productCategory.Text;
+            int productStock = Convert.ToInt32(textBox_productStock.Text.Trim());
+            int productDiscount = Convert.ToInt32(textBox_productDiscount.Text.Trim());
+
+            //i.ProductName, i.ProductPrice, i.ProductColor, i.ProductDescription, i.Type, i.Category, i.Stock, i.Discount);
+            Item item1 = new Item(productName, productPrice, productColor, productDescription, productType, productCategory, productStock, productDiscount);
+
+            if (itemBusiness.InsertItem(item1))
+            {
+                MessageBox.Show("Uspesno unet item");
+                refreshStockData();
+
+                textBox_productName.Clear();
+                textBox_productType.Clear();
+                textBox_productColor.Clear();
+                textBox_productDescription.Clear();
+                textBox_productPrice.Clear();
+                textBox_productCategory.Clear();
+                textBox_productStock.Clear();
+                textBox_productDiscount.Clear();
+            }
+            else
+                MessageBox.Show("Nije unet lepo podatak");
+
+
+        }
+        private void refreshStockData()
+        {
+            List<Item> items = new List<Item>();
+            items = itemBusiness.GetInStockItems();
+            dataGridStock.DataSource = null;
+            bs.DataSource = null;
+            dt.Clear();
+            foreach (var item in items)
+            {
+                dt.Rows.Add(new object[] { item.ProductName, item.ProductPrice, item.ProductColor, item.ProductDescription, item.Type, item.Category, item.Stock, item.Discount });
+            }
+            bs.DataSource = dt;
+            dataGridStock.DataSource = bs;
         }
     }
 }

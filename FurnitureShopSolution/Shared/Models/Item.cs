@@ -8,7 +8,20 @@ namespace Shared.Models
 {
     public class Item
     {
-		public int ItemID { get; set; }
+        public Item() { }
+        public Item(string productName, decimal productPrice, string productColor, string productDescription, string productType, string productCategory, int productStock, int productDiscount)
+        {
+            ProductName = productName;
+            ProductPrice = productPrice;
+            ProductColor = productColor;
+            ProductDescription = productDescription;
+            Type = productType;
+            Category = productCategory;
+            Stock = productStock;
+            Discount = productDiscount;
+        }
+
+        public int ItemID { get; set; }
 		public string ProductName { get; set; }
 		public decimal ProductPrice { get; set; }
 		public string ProductColor { get; set; }

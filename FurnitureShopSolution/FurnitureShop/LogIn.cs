@@ -18,6 +18,7 @@ namespace FurnitureShop
     public partial class LogIn : Form
     {
         private readonly IEmployeeBusiness employeeBusiness;
+
         public LogIn()
         {
            
@@ -32,7 +33,7 @@ namespace FurnitureShop
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Register r = new Register();
-            r.Show();
+            r.ShowDialog();
 
         }
 
