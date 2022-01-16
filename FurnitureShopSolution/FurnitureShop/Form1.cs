@@ -27,7 +27,6 @@ namespace FurnitureShop
         BindingSource bs_employee = new BindingSource();
         DataTable dt = new DataTable();
         DataTable dt_employee= new DataTable();
-        List<Employee> _employees = new List<Employee>();
         string role = "";
         public Form1(string Username)
         {
@@ -55,9 +54,6 @@ namespace FurnitureShop
             List<Item> items = new List<Item>();
             items = itemBusiness.GetInStockItems();
 
-            
-            _employees = employeeBusiness.GetAllEmployees();
-
             textBoxSearch.Clear();
 
             dt.Columns.Add("ProductName", typeof(string));
@@ -81,25 +77,30 @@ namespace FurnitureShop
 
             dataGridStock.DataSource = itemBusiness.GetInStockItems();
             listBoxItems.HorizontalScrollbar = true;
-            foreach(var item in items)
-              {
+            foreach (var item in items)
+            {
                 dt.Rows.Add(new object[] { item.ProductName, item.ProductPrice, item.ProductColor, item.ProductDescription, item.Type, item.Category, item.Stock, item.Discount });
-                listBoxItems.Items.Add(string.Format("{0}| {1} / Price:{2} / {3} / {4} / {5} / {6} / In stock:{7} / Discount:{8} ",item.ItemID,item.ProductName,item.ProductPrice,item.ProductColor,item.ProductDescription,item.Type,item.Category, item.Stock, item.Discount));
-              }
+                listBoxItems.Items.Add(string.Format("{0}| {1} / Price:{2} / {3} / {4} / {5} / {6} / In stock:{7} / Discount:{8} ", item.ItemID, item.ProductName, item.ProductPrice, item.ProductColor, item.ProductDescription, item.Type, item.Category, item.Stock, item.Discount));
+            }
             bs.DataSource = dt;
             dataGridStock.DataSource = bs;
 
             refreshDataGridEmployee();
-            
-            
+
+            foreach (var employee in employeeBusiness.GetAllEmployees())
+            {
+                if (employee.Username == labelUser.Text)
+                {
+                    role = employee.Role;
+                }
+            }
         }
         private void refreshDataGridEmployee()
         {
-            
             dataGridEmployees.DataSource = null;
             bs_employee.DataSource = null;
             dt_employee.Clear();
-            foreach (var employees in _employees)
+            foreach (var employees in employeeBusiness.GetAllEmployees())
             {
                 dt_employee.Rows.Add(new object[] { employees.EmployeeID, employees.Name, employees.Email, employees.PhoneNumber, employees.Address, employees.Username, employees.Role, employees.ManagerID });
             }
@@ -171,26 +172,17 @@ namespace FurnitureShop
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            foreach (var employee in _employees)
+            if(role.CompareTo("Administrator")==0)
             {
-                if(employee.Username == labelUser.Text)
-                {
-                    this.role = employee.Role;
-                    if(employee.Role.ToUpper().CompareTo("ADMINISTRATOR")==0)
-                    {
-                        employeeBusiness.DeleteEmployee(Convert.ToInt32(dataGridEmployees.SelectedRows[0].Cells[0].Value));
-                        bs_employee.RemoveAt(dataGridEmployees.SelectedRows[0].Index);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("You do not have permission to delete employees!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;                
-                }
+                employeeBusiness.DeleteEmployee(Convert.ToInt32(dataGridEmployees.SelectedRows[0].Cells[0].Value));
+                bs_employee.RemoveAt(dataGridEmployees.SelectedRows[0].Index);
+                return;
             }
-            
+            MessageBox.Show("You do not have permission to delete employees!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
         }
-        
+
         private void buttonSearch2_Click(object sender, EventArgs e)
         {
             
@@ -205,19 +197,17 @@ namespace FurnitureShop
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (role.ToUpper().CompareTo("ADMINISTRATOR")==0)
-            {
+            if (role.CompareTo("Administrator") == 0)
+            { 
                 Register r = new Register();
                 r.ShowDialog();
                 if (FormIsOpen(Application.OpenForms, typeof(Register)) == false)
                 {
                     refreshDataGridEmployee();
+                    return;
                 }
             }
-            else
-            {
-                MessageBox.Show("You do not have permission to add employees!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MessageBox.Show("You do not have permission to add employees!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
@@ -234,7 +224,6 @@ namespace FurnitureShop
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //this.Close();
             Environment.Exit(1);
         }
 
@@ -304,7 +293,6 @@ namespace FurnitureShop
                                     oI.Quantity += 1;
                                 }
                             }
-                            //item.ItemID
                         }
 
                     }
