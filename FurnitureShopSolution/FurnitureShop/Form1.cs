@@ -27,6 +27,8 @@ namespace FurnitureShop
         BindingSource bs_employee = new BindingSource();
         DataTable dt = new DataTable();
         DataTable dt_employee= new DataTable();
+        List<Employee> _employees = new List<Employee>();
+        string role = "";
         public Form1(string Username)
         {
             InitializeComponent();
@@ -53,6 +55,9 @@ namespace FurnitureShop
             List<Item> items = new List<Item>();
             items = itemBusiness.GetInStockItems();
 
+            
+            _employees = employeeBusiness.GetAllEmployees();
+
             textBoxSearch.Clear();
 
             dt.Columns.Add("ProductName", typeof(string));
@@ -70,7 +75,6 @@ namespace FurnitureShop
             dt_employee.Columns.Add("PhoneNumber", typeof(int));
             dt_employee.Columns.Add("Address", typeof(string));
             dt_employee.Columns.Add("Username", typeof(string));
-            dt_employee.Columns.Add("Password", typeof(string));
             dt_employee.Columns.Add("Role", typeof(string));
             dt_employee.Columns.Add("ManagerID", typeof(int));
 
@@ -91,14 +95,13 @@ namespace FurnitureShop
         }
         private void refreshDataGridEmployee()
         {
-            List<Employee> _employees = new List<Employee>();
-            _employees = employeeBusiness.GetAllEmployees();
+            
             dataGridEmployees.DataSource = null;
             bs_employee.DataSource = null;
             dt_employee.Clear();
             foreach (var employees in _employees)
             {
-                dt_employee.Rows.Add(new object[] { employees.EmployeeID, employees.Name, employees.Email, employees.PhoneNumber, employees.Address, employees.Username, employees.Password, employees.Role, employees.ManagerID });
+                dt_employee.Rows.Add(new object[] { employees.EmployeeID, employees.Name, employees.Email, employees.PhoneNumber, employees.Address, employees.Username, employees.Role, employees.ManagerID });
             }
             bs_employee.DataSource = dt_employee;
             dataGridEmployees.DataSource = bs_employee;
@@ -168,9 +171,24 @@ namespace FurnitureShop
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            foreach (var employee in _employees)
+            {
+                if(employee.Username == labelUser.Text)
+                {
+                    this.role = employee.Role;
+                    if(employee.Role.ToUpper().CompareTo("ADMINISTRATOR")==0)
+                    {
+                        employeeBusiness.DeleteEmployee(Convert.ToInt32(dataGridEmployees.SelectedRows[0].Cells[0].Value));
+                        bs_employee.RemoveAt(dataGridEmployees.SelectedRows[0].Index);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You do not have permission to delete employees!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;                
+                }
+            }
             
-            employeeBusiness.DeleteEmployee(Convert.ToInt32(dataGridEmployees.SelectedRows[0].Cells[0].Value));
-            bs_employee.RemoveAt(dataGridEmployees.SelectedRows[0].Index);
         }
         
         private void buttonSearch2_Click(object sender, EventArgs e)
@@ -187,16 +205,19 @@ namespace FurnitureShop
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            Register r = new Register();
-            r.ShowDialog();
-            if(FormIsOpen(Application.OpenForms,typeof(Register))==false)
-             {
-                refreshDataGridEmployee();
+            if (role.ToUpper().CompareTo("ADMINISTRATOR")==0)
+            {
+                Register r = new Register();
+                r.ShowDialog();
+                if (FormIsOpen(Application.OpenForms, typeof(Register)) == false)
+                {
+                    refreshDataGridEmployee();
+                }
             }
-
-
-
-
+            else
+            {
+                MessageBox.Show("You do not have permission to add employees!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
@@ -219,71 +240,79 @@ namespace FurnitureShop
 
         private void buttonSell_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Please confirm your sale!", "Confirm sale", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == System.Windows.Forms.DialogResult.Yes)
+            if (labelBill.Text == "0")
             {
-                
-                Order o = new Order();
-                foreach(var employee in employeeBusiness.GetAllEmployees())
+                MessageBox.Show("You need to add items to the card to make a sale!", "Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Please confirm your sale!", "Confirm sale", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    if(employee.Username.Equals(labelUser.Text))
+
+
+                    Order o = new Order();
+                    foreach (var employee in employeeBusiness.GetAllEmployees())
                     {
-                        o.EmployeeID = employee.EmployeeID;
-                    }
-                }
-                o.OrderDate = DateTime.Now;
-                o.Bill = decimal.Parse(labelBill.Text);
-                
-
-                orderBusiness.InsertOrder(o);
-
-                int order_ID = orderBusiness.GetAllOrders().Last().OrderID;
-
-                
-
-                List<int> IDs = new List<int>();
-
-                foreach(string item in listBoxCart.Items)
-                {
-                    int position = item.IndexOf("|");
-                     IDs.Add(int.Parse(item.Substring(0, position)));
-                }
-
-
-                foreach(var itemID in IDs)
-                {
-                    OrderItem oI = new OrderItem();
-                    List<OrderItem> orderItems = new List<OrderItem>();
-                    orderItems = orderItemBusiness.GetAllOrderItems();
-                    
-
-                    foreach (var item in itemBusiness.GetInStockItems())
-                    {
-                        int orderItem_ID = orderItemBusiness.GetAllOrderItems().Last().OrderItemID;
-
-                        if (item.ItemID == itemID)
+                        if (employee.Username.Equals(labelUser.Text))
                         {
-                            if (!orderItems.Contains(new OrderItem(orderItem_ID,oI.ItemID, oI.Quantity, order_ID)))
+                            o.EmployeeID = employee.EmployeeID;
+                        }
+                    }
+                    o.OrderDate = DateTime.Now;
+                    o.Bill = decimal.Parse(labelBill.Text);
+
+
+                    orderBusiness.InsertOrder(o);
+
+                    int order_ID = orderBusiness.GetAllOrders().Last().OrderID;
+
+
+
+                    List<int> IDs = new List<int>();
+
+                    foreach (string item in listBoxCart.Items)
+                    {
+                        int position = item.IndexOf("|");
+                        IDs.Add(int.Parse(item.Substring(0, position)));
+                    }
+
+
+                    foreach (var itemID in IDs)
+                    {
+                        OrderItem oI = new OrderItem();
+                        List<OrderItem> orderItems = new List<OrderItem>();
+                        orderItems = orderItemBusiness.GetAllOrderItems();
+
+
+                        foreach (var item in itemBusiness.GetInStockItems())
+                        {
+                            int orderItem_ID = orderItemBusiness.GetAllOrderItems().Last().OrderItemID;
+
+                            if (item.ItemID == itemID)
                             {
-                                oI.ItemID = item.ItemID;
-                                oI.Quantity = 1;
-                                oI.OrderID = order_ID;
-                                orderItemBusiness.InsertOrderItem(oI);
-                                orderItems.Add(oI);
-                            }
-                            else
-                            {
-                                oI.Quantity += 1;
-                            }
+                                if (!orderItems.Contains(new OrderItem(orderItem_ID, oI.ItemID, oI.Quantity, order_ID)))
+                                {
+                                    oI.ItemID = item.ItemID;
+                                    oI.Quantity = 1;
+                                    oI.OrderID = order_ID;
+                                    orderItemBusiness.InsertOrderItem(oI);
+                                    orderItems.Add(oI);
+                                }
+                                else
+                                {
+                                    oI.Quantity += 1;
+                                }
                             }
                             //item.ItemID
+                        }
+
                     }
-                   
+
+
+
+
                 }
-                
-                
-
-
             }
 
         }
