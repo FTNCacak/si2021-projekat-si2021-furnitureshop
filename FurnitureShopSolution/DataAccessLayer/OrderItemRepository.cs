@@ -31,7 +31,7 @@ namespace DataAccessLayer
                     orderItem.OrderItemID = sqlDataReader.GetInt32(0);
                     orderItem.ItemID = sqlDataReader.GetInt32(1);
                     orderItem.Quantity = sqlDataReader.GetInt32(2);
-                   // orderItem.OrderID = sqlDataReader.GetInt32(3);
+                    orderItem.OrderID = sqlDataReader.GetInt32(3);
                     orderItems.Add(orderItem);
                 }
 
@@ -47,12 +47,10 @@ namespace DataAccessLayer
                 sqlCommand.Connection = sqlConnection;
                 sqlCommand.CommandText =
                 string.Format("INSERT INTO OrderItems VALUES({0},{1},{2})",
-                    oi.ItemID, oi.Quantity);
-                   // ,oi.OrderID);
+                    oi.ItemID, oi.Quantity,oi.OrderID);
+                   
                 sqlConnection.Open();
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-                sqlConnection.Open();
                 return sqlCommand.ExecuteNonQuery();
 
             }

@@ -45,12 +45,10 @@ namespace DataAccessLayer
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = sqlConnection;
                 sqlCommand.CommandText =
-                string.Format("INSERT INTO Orders VALUES({0},'{1}',{2}",
+                string.Format("INSERT INTO Orders VALUES({0},'{1}',{2})",
                     o.EmployeeID,o.OrderDate,o.Bill);
                 sqlConnection.Open();
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-                sqlConnection.Open();
                 return sqlCommand.ExecuteNonQuery();
 
             }
@@ -60,7 +58,6 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
-                //proveriti logiku sql upita ispod
                 string command = "UPDATE OrderItems SET EmployeeID=@EmployeeID, OrderDate=@OrderDate, Bill=@Bill  WHERE OrderID=@Order";
 
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);

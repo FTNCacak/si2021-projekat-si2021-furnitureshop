@@ -136,9 +136,33 @@ namespace FurnitureShop
 
         private void buttonRemoveItem_Click(object sender, EventArgs e)
         {
+           
+            decimal bill = decimal.Parse(labelBill.Text);
+
             if (listBoxCart.SelectedItems.Count > 0)
             {
                 listBoxCart.Items.Remove(listBoxCart.SelectedItem);
+
+                string selectedItem = listBoxItems.SelectedItem.ToString();
+                int position = selectedItem.IndexOf("|");
+                selectedItem = selectedItem.Substring(0, position);
+
+                foreach (var item in itemBusiness.GetAllItems())
+                {
+                    if (item.ItemID == double.Parse(selectedItem))
+                    {
+                        bill -= item.ProductPrice;
+                    }
+                }
+                if (bill == 0)
+                {
+                    labelBill.Text = "0";
+                }
+                else
+                {
+                    labelBill.Text = bill.ToString();
+
+                }
             }
         }
 
@@ -198,10 +222,7 @@ namespace FurnitureShop
             DialogResult result = MessageBox.Show("Please confirm your sale!", "Confirm sale", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == System.Windows.Forms.DialogResult.Yes)
             {
-                /*OrderItem oI = new OrderItem();
-                oI.ItemID =
-
-
+                
                 Order o = new Order();
                 foreach(var employee in employeeBusiness.GetAllEmployees())
                 {
@@ -212,9 +233,57 @@ namespace FurnitureShop
                 }
                 o.OrderDate = DateTime.Now;
                 o.Bill = decimal.Parse(labelBill.Text);
-                //o.OrderItemID
-                */
-                ;
+                
+
+                orderBusiness.InsertOrder(o);
+
+                int order_ID = orderBusiness.GetAllOrders().Last().OrderID;
+
+                
+
+                List<int> IDs = new List<int>();
+
+                foreach(string item in listBoxCart.Items)
+                {
+                    int position = item.IndexOf("|");
+                     IDs.Add(int.Parse(item.Substring(0, position)));
+                }
+
+
+                foreach(var itemID in IDs)
+                {
+                    OrderItem oI = new OrderItem();
+                    List<OrderItem> orderItems = new List<OrderItem>();
+                    orderItems = orderItemBusiness.GetAllOrderItems();
+                    
+
+                    foreach (var item in itemBusiness.GetInStockItems())
+                    {
+                        int orderItem_ID = orderItemBusiness.GetAllOrderItems().Last().OrderItemID;
+
+                        if (item.ItemID == itemID)
+                        {
+                            if (!orderItems.Contains(new OrderItem(orderItem_ID,oI.ItemID, oI.Quantity, order_ID)))
+                            {
+                                oI.ItemID = item.ItemID;
+                                oI.Quantity = 1;
+                                oI.OrderID = order_ID;
+                                orderItemBusiness.InsertOrderItem(oI);
+                                orderItems.Add(oI);
+                            }
+                            else
+                            {
+                                oI.Quantity += 1;
+                            }
+                            }
+                            //item.ItemID
+                    }
+                   
+                }
+                
+                
+
+
             }
 
         }
