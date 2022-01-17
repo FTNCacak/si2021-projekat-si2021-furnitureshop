@@ -145,9 +145,9 @@ namespace FurnitureShop
 
             if (listBoxCart.SelectedItems.Count > 0)
             {
-                listBoxCart.Items.Remove(listBoxCart.SelectedItem);
+                
 
-                string selectedItem = listBoxItems.SelectedItem.ToString();
+                string selectedItem =listBoxCart.SelectedItem.ToString();
                 int position = selectedItem.IndexOf("|");
                 selectedItem = selectedItem.Substring(0, position);
 
@@ -167,6 +167,7 @@ namespace FurnitureShop
                     labelBill.Text = bill.ToString();
 
                 }
+                listBoxCart.Items.Remove(listBoxCart.SelectedItem);
             }
         }
 
@@ -344,7 +345,7 @@ namespace FurnitureShop
                     listBoxCart.Items.Clear();
                     labelBill.Text = "0";
                     refreshStockData();
-
+                    listBoxItems.Refresh();
                 }
             }
 

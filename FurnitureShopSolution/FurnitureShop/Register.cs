@@ -41,7 +41,17 @@ namespace FurnitureShop
             Employee emp = new Employee();
             emp.Name = textBoxName.Text;
             emp.Email = textBoxEmail.Text;
-            emp.PhoneNumber = Convert.ToInt32(textBoxPhoneNumber.Text);
+
+            try
+            {
+                emp.PhoneNumber = Convert.ToInt32(textBoxPhoneNumber.Text);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Field phone number must contains only numbers!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             emp.Address = textBoxAdress.Text;
             emp.Username = textBoxUserName.Text;
             emp.Password = textBoxPassword.Text;
