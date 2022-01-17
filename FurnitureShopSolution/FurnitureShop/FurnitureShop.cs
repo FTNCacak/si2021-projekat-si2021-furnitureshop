@@ -145,7 +145,8 @@ namespace FurnitureShop
 
             if (listBoxCart.SelectedItems.Count > 0)
             {
-                
+                if (listBoxCart.SelectedItem == null)
+                    return;
 
                 string selectedItem =listBoxCart.SelectedItem.ToString();
                 int position = selectedItem.IndexOf("|");
