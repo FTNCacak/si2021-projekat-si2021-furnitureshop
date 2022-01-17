@@ -54,7 +54,7 @@ namespace FurnitureShop
                     if (textBoxUserName.Text.CompareTo(employee.Username) == 0 && textBoxPassword.Text.CompareTo(employee.Password) == 0)
                     { 
                         MessageBox.Show("Login successful!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Form1 app = new Form1(employee.Username);
+                        FurnitureShop app = new FurnitureShop(employee.Username);
                         app.Show();
                         this.Hide();
                         pom = 1;

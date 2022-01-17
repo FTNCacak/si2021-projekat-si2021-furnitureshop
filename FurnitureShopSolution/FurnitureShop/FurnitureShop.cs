@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace FurnitureShop
 {
-    public partial class Form1 : Form
+    public partial class FurnitureShop : Form
     {
         private readonly IItemBusiness itemBusiness;
         private readonly IEmployeeBusiness employeeBusiness;
@@ -28,7 +28,7 @@ namespace FurnitureShop
         DataTable dt = new DataTable();
         DataTable dt_employee= new DataTable();
         string role = "";
-        public Form1(string Username)
+        public FurnitureShop(string Username)
         {
             InitializeComponent();
 
@@ -49,7 +49,7 @@ namespace FurnitureShop
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FurnitureShop_Load(object sender, EventArgs e)
         {
             List<Item> items = new List<Item>();
             items = itemBusiness.GetInStockItems();
@@ -212,12 +212,32 @@ namespace FurnitureShop
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            string[] words = textBoxSearch.Text.Split(' ');
+            string[] words = textBoxSearch.Text.Split();
+            string filter = "";
+            int pom = 0;
             foreach(string word in words)
             {
-                bs.Filter =
-                string.Format("ProductName LIKE '%{0}%' OR ProductColor LIKE '%{0}%'", word);
+                //just for now
+
+                if (!word.Equals(' '))
+                {
+
+                
+                if (pom==0)
+                {
+                    filter +=
+                    string.Format("ProductName LIKE '%{0}%' OR ProductColor LIKE '%{0}%'", word);
+                    pom = 1;
+                }
+                else
+                {
+                    filter +=
+                    string.Format(" AND ProductColor LIKE '%{0}%'", word);
+
+                }
+                }
             }
+            bs.Filter = filter;
             
         }
 
@@ -227,7 +247,7 @@ namespace FurnitureShop
                string.Format("Name LIKE '%{0}%' OR Username LIKE '%{0}%' OR Role LIKE '%{0}%'", textBoxSearch2.Text);
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void FurnitureShop_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(1);
         }
@@ -294,34 +314,36 @@ namespace FurnitureShop
                                 i.ProductDescription = item.ProductDescription;
                                 i.ProductName = item.ProductName;
                                 i.ProductPrice = item.ProductPrice;
-                                i.Stock = item.Stock-1;
+                                if(item.Stock>0)
+                                {
+                                    i.Stock = item.Stock - 1;
+                                }
                                 i.Type = item.Type;
                                 i.Category = item.Category;
                                 i.Discount = item.Discount;
 
                                 discount += i.Discount;
 
-                                if (!orderItems.Contains(new OrderItem(orderItem_ID, oI.ItemID, oI.Quantity, order_ID)))
-                                {
-                                    oI.ItemID = item.ItemID;
-                                    oI.Quantity = 1;
-                                    oI.OrderID = order_ID;
-                                    orderItemBusiness.InsertOrderItem(oI);
-                                    orderItems.Add(oI);
-                                    itemBusiness.UpdateItem(i);
-                                }
-                                else
-                                {
-                                    oI.Quantity += 1;
-                                }
+                               
+                                oI.ItemID = item.ItemID;
+                                oI.Quantity = 1;
+                                oI.OrderID = order_ID;
+                                orderItemBusiness.InsertOrderItem(oI);
+                                orderItems.Add(oI);
+                                itemBusiness.UpdateItem(i);
+                                
+                               
                             }
                         }
                     }
                     o.Bill *= (1 - (discount / 100));
                     orderBusiness.InsertOrder(o);
 
-
-
+                    MessageBox.Show("The bill is: " + o.Bill+"\nDiscount:"+discount+"%", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    listBoxCart.Items.Clear();
+                    labelBill.Text = "0";
+                    refreshStockData();
 
                 }
             }
@@ -375,12 +397,10 @@ namespace FurnitureShop
         }
         private void refreshStockData()
         {
-            List<Item> items = new List<Item>();
-            items = itemBusiness.GetInStockItems();
             dataGridStock.DataSource = null;
             bs.DataSource = null;
             dt.Clear();
-            foreach (var item in items)
+            foreach (var item in itemBusiness.GetInStockItems())
             {
                 dt.Rows.Add(new object[] { item.ProductName, item.ProductPrice, item.ProductColor, item.ProductDescription, item.Type, item.Category, item.Stock, item.Discount });
             }

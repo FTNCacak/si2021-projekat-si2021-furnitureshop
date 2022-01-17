@@ -101,9 +101,9 @@ namespace FurnitureShop
             // 
             this.buttonLogIn.BackColor = System.Drawing.Color.Sienna;
             this.buttonLogIn.ForeColor = System.Drawing.Color.Bisque;
-            this.buttonLogIn.Location = new System.Drawing.Point(162, 209);
+            this.buttonLogIn.Location = new System.Drawing.Point(165, 209);
             this.buttonLogIn.Name = "buttonLogIn";
-            this.buttonLogIn.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogIn.Size = new System.Drawing.Size(94, 30);
             this.buttonLogIn.TabIndex = 6;
             this.buttonLogIn.Text = "Log in";
             this.buttonLogIn.UseVisualStyleBackColor = false;
@@ -117,7 +117,7 @@ namespace FurnitureShop
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.Bisque;
-            this.linkLabel1.Location = new System.Drawing.Point(243, 214);
+            this.linkLabel1.Location = new System.Drawing.Point(265, 218);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(84, 13);
             this.linkLabel1.TabIndex = 7;
