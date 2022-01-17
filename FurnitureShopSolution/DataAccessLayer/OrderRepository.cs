@@ -58,7 +58,9 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
-                string command = "UPDATE OrderItems SET EmployeeID=@EmployeeID, OrderDate=@OrderDate, Bill=@Bill  WHERE OrderID=@Order";
+                sqlConnection.Open();
+
+                string command = "UPDATE Orders SET EmployeeID=@EmployeeID, OrderDate=@OrderDate, Bill=@Bill  WHERE OrderID=@OrderID";
 
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@OrderID", Order.OrderID);
@@ -66,7 +68,6 @@ namespace DataAccessLayer
                 sqlCommand.Parameters.AddWithValue("@OrderDate", Order.OrderDate);
                 sqlCommand.Parameters.AddWithValue("@Bill", Order.Bill);
 
-                sqlConnection.Open();
 
                 return sqlCommand.ExecuteNonQuery();
 

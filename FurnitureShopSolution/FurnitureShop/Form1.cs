@@ -212,8 +212,13 @@ namespace FurnitureShop
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            bs.Filter =
-                string.Format("ProductName LIKE '%{0}%' OR ProductColor LIKE '%{0}%'", textBoxSearch.Text);
+            string[] words = textBoxSearch.Text.Split(' ');
+            foreach(string word in words)
+            {
+                bs.Filter =
+                string.Format("ProductName LIKE '%{0}%' OR ProductColor LIKE '%{0}%'", word);
+            }
+            
         }
 
         private void textBoxSearch2_TextChanged_1(object sender, EventArgs e)
@@ -250,9 +255,10 @@ namespace FurnitureShop
                     }
                     o.OrderDate = DateTime.Now;
                     o.Bill = decimal.Parse(labelBill.Text);
+                    decimal discount = 0;
 
 
-                    orderBusiness.InsertOrder(o);
+
 
                     int order_ID = orderBusiness.GetAllOrders().Last().OrderID;
 
@@ -272,6 +278,7 @@ namespace FurnitureShop
                         OrderItem oI = new OrderItem();
                         List<OrderItem> orderItems = new List<OrderItem>();
                         orderItems = orderItemBusiness.GetAllOrderItems();
+                      
 
 
                         foreach (var item in itemBusiness.GetInStockItems())
@@ -280,6 +287,20 @@ namespace FurnitureShop
 
                             if (item.ItemID == itemID)
                             {
+                                Item i = new Item();
+
+                                i.ItemID = itemID;
+                                i.ProductColor = item.ProductColor;
+                                i.ProductDescription = item.ProductDescription;
+                                i.ProductName = item.ProductName;
+                                i.ProductPrice = item.ProductPrice;
+                                i.Stock = item.Stock-1;
+                                i.Type = item.Type;
+                                i.Category = item.Category;
+                                i.Discount = item.Discount;
+
+                                discount += i.Discount;
+
                                 if (!orderItems.Contains(new OrderItem(orderItem_ID, oI.ItemID, oI.Quantity, order_ID)))
                                 {
                                     oI.ItemID = item.ItemID;
@@ -287,6 +308,7 @@ namespace FurnitureShop
                                     oI.OrderID = order_ID;
                                     orderItemBusiness.InsertOrderItem(oI);
                                     orderItems.Add(oI);
+                                    itemBusiness.UpdateItem(i);
                                 }
                                 else
                                 {
@@ -294,8 +316,9 @@ namespace FurnitureShop
                                 }
                             }
                         }
-
                     }
+                    o.Bill *= (1 - (discount / 100));
+                    orderBusiness.InsertOrder(o);
 
 
 
@@ -312,34 +335,41 @@ namespace FurnitureShop
 
         private void button_insertSupply_Click(object sender, EventArgs e)
         {
-            string productName = textBox_productName.Text;
-            string productType = textBox_productType.Text;
-            string productColor = textBox_productColor.Text;
-            string productDescription = textBox_productDescription.Text;
-            decimal productPrice = Convert.ToDecimal(textBox_productPrice.Text.Trim());
-            string productCategory = textBox_productCategory.Text;
-            int productStock = Convert.ToInt32(textBox_productStock.Text.Trim());
-            int productDiscount = Convert.ToInt32(textBox_productDiscount.Text.Trim());
-
-            //i.ProductName, i.ProductPrice, i.ProductColor, i.ProductDescription, i.Type, i.Category, i.Stock, i.Discount);
-            Item item1 = new Item(productName, productPrice, productColor, productDescription, productType, productCategory, productStock, productDiscount);
-
-            if (itemBusiness.InsertItem(item1))
+            if (textBox_productName.Text == "" || textBox_productType.Text == "" || textBox_productColor.Text == ""
+                ||  textBox_productPrice.Text == "" || textBox_productCategory.Text == "" || textBox_productStock.Text == "")
             {
-                MessageBox.Show("Uspesno unet item");
-                refreshStockData();
-
-                textBox_productName.Clear();
-                textBox_productType.Clear();
-                textBox_productColor.Clear();
-                textBox_productDescription.Clear();
-                textBox_productPrice.Clear();
-                textBox_productCategory.Clear();
-                textBox_productStock.Clear();
-                textBox_productDiscount.Clear();
+                MessageBox.Show("All fields must be filled!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                MessageBox.Show("Nije unet lepo podatak");
+            {
+                string productName = textBox_productName.Text;
+                string productType = textBox_productType.Text;
+                string productColor = textBox_productColor.Text;
+                string productDescription = textBox_productDescription.Text;
+                decimal productPrice = Convert.ToDecimal(textBox_productPrice.Text.Trim());
+                string productCategory = textBox_productCategory.Text;
+                int productStock = Convert.ToInt32(textBox_productStock.Text.Trim());
+                int productDiscount = Convert.ToInt32(textBox_productDiscount.Text.Trim());
+
+                Item item1 = new Item(productName, productPrice, productColor, productDescription, productType, productCategory, productStock, productDiscount);
+
+                if (itemBusiness.InsertItem(item1))
+                {
+                    MessageBox.Show("Item successfully added!");
+                    refreshStockData();
+
+                    textBox_productName.Clear();
+                    textBox_productType.Clear();
+                    textBox_productColor.Clear();
+                    textBox_productDescription.Clear();
+                    textBox_productPrice.Clear();
+                    textBox_productCategory.Clear();
+                    textBox_productStock.Clear();
+                    textBox_productDiscount.Clear();
+                }
+                else
+                    MessageBox.Show("Error while inserting item! Try again!");
+            }
 
 
         }

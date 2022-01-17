@@ -525,6 +525,7 @@
             // textBox_productDescription
             // 
             this.textBox_productDescription.BackColor = System.Drawing.Color.Tan;
+            this.textBox_productDescription.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_productDescription.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBox_productDescription.Location = new System.Drawing.Point(301, 244);
             this.textBox_productDescription.Multiline = true;
@@ -535,71 +536,78 @@
             // textBox_productDiscount
             // 
             this.textBox_productDiscount.BackColor = System.Drawing.Color.Tan;
+            this.textBox_productDiscount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_productDiscount.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBox_productDiscount.Location = new System.Drawing.Point(79, 244);
             this.textBox_productDiscount.Name = "textBox_productDiscount";
-            this.textBox_productDiscount.Size = new System.Drawing.Size(162, 22);
+            this.textBox_productDiscount.Size = new System.Drawing.Size(162, 27);
             this.textBox_productDiscount.TabIndex = 34;
             // 
             // textBox_productStock
             // 
             this.textBox_productStock.BackColor = System.Drawing.Color.Tan;
+            this.textBox_productStock.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_productStock.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBox_productStock.Location = new System.Drawing.Point(508, 186);
             this.textBox_productStock.Name = "textBox_productStock";
-            this.textBox_productStock.Size = new System.Drawing.Size(162, 22);
+            this.textBox_productStock.Size = new System.Drawing.Size(162, 27);
             this.textBox_productStock.TabIndex = 33;
             // 
             // textBox_productColor
             // 
             this.textBox_productColor.BackColor = System.Drawing.Color.Tan;
+            this.textBox_productColor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_productColor.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBox_productColor.Location = new System.Drawing.Point(301, 184);
             this.textBox_productColor.Name = "textBox_productColor";
-            this.textBox_productColor.Size = new System.Drawing.Size(170, 22);
+            this.textBox_productColor.Size = new System.Drawing.Size(170, 27);
             this.textBox_productColor.TabIndex = 32;
             // 
             // textBox_productCategory
             // 
             this.textBox_productCategory.BackColor = System.Drawing.Color.Tan;
+            this.textBox_productCategory.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_productCategory.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBox_productCategory.Location = new System.Drawing.Point(79, 184);
             this.textBox_productCategory.Name = "textBox_productCategory";
-            this.textBox_productCategory.Size = new System.Drawing.Size(162, 22);
+            this.textBox_productCategory.Size = new System.Drawing.Size(162, 27);
             this.textBox_productCategory.TabIndex = 31;
             // 
             // textBox_productPrice
             // 
             this.textBox_productPrice.BackColor = System.Drawing.Color.Tan;
+            this.textBox_productPrice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_productPrice.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBox_productPrice.Location = new System.Drawing.Point(508, 120);
             this.textBox_productPrice.Name = "textBox_productPrice";
-            this.textBox_productPrice.Size = new System.Drawing.Size(162, 22);
+            this.textBox_productPrice.Size = new System.Drawing.Size(162, 27);
             this.textBox_productPrice.TabIndex = 30;
             // 
             // textBox_productType
             // 
             this.textBox_productType.BackColor = System.Drawing.Color.Tan;
+            this.textBox_productType.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_productType.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBox_productType.Location = new System.Drawing.Point(301, 120);
             this.textBox_productType.Name = "textBox_productType";
-            this.textBox_productType.Size = new System.Drawing.Size(162, 22);
+            this.textBox_productType.Size = new System.Drawing.Size(162, 27);
             this.textBox_productType.TabIndex = 29;
             // 
             // textBox_productName
             // 
             this.textBox_productName.BackColor = System.Drawing.Color.Tan;
+            this.textBox_productName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_productName.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBox_productName.Location = new System.Drawing.Point(79, 120);
             this.textBox_productName.Name = "textBox_productName";
-            this.textBox_productName.Size = new System.Drawing.Size(162, 22);
+            this.textBox_productName.Size = new System.Drawing.Size(162, 27);
             this.textBox_productName.TabIndex = 28;
             // 
             // button_insertSupply
             // 
             this.button_insertSupply.BackColor = System.Drawing.Color.Tan;
             this.button_insertSupply.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.button_insertSupply.Location = new System.Drawing.Point(301, 336);
+            this.button_insertSupply.Location = new System.Drawing.Point(330, 339);
             this.button_insertSupply.Name = "button_insertSupply";
             this.button_insertSupply.Size = new System.Drawing.Size(113, 37);
             this.button_insertSupply.TabIndex = 27;
