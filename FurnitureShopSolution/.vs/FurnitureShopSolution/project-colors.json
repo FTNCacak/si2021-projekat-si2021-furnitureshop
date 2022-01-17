@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "091ee0ce-371d-4f1f-9b89-85188aaea06b": {
+      "ProjectGuid": "091ee0ce-371d-4f1f-9b89-85188aaea06b",
+      "DisplayName": "FurnitureShop",
+      "ColorIndex": 0
+    },
+    "14cc5bbf-c2d0-461f-a844-f74ef64a71c7": {
+      "ProjectGuid": "14cc5bbf-c2d0-461f-a844-f74ef64a71c7",
+      "DisplayName": "DataAccessLayer",
+      "ColorIndex": 1
+    },
+    "22928636-b6cf-4ab0-900a-ec09e6c1f7c5": {
+      "ProjectGuid": "22928636-b6cf-4ab0-900a-ec09e6c1f7c5",
+      "DisplayName": "BussniessLayer",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "e5064998-f1b3-4a64-9830-127492c74a35": {
+      "ProjectGuid": "e5064998-f1b3-4a64-9830-127492c74a35",
+      "DisplayName": "Shared",
+      "ColorIndex": 3
+    },
+    "76dd67ec-6bfd-499d-8fc1-8943953dd825": {
+      "ProjectGuid": "76dd67ec-6bfd-499d-8fc1-8943953dd825",
+      "DisplayName": "BusinessLayerTest",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}
