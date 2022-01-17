@@ -379,7 +379,7 @@ namespace FurnitureShop
 
                 if (itemBusiness.InsertItem(item1))
                 {
-                    MessageBox.Show("Item successfully added!");
+                    MessageBox.Show("Item successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     refreshStockData();
 
                     textBox_productName.Clear();
