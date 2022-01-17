@@ -49,7 +49,7 @@ namespace FurnitureShop
             this.labelUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelUsername.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.Bisque;
-            this.labelUsername.Location = new System.Drawing.Point(67, 106);
+            this.labelUsername.Location = new System.Drawing.Point(67, 111);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(83, 21);
             this.labelUsername.TabIndex = 0;
@@ -60,7 +60,7 @@ namespace FurnitureShop
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Bisque;
-            this.label1.Location = new System.Drawing.Point(72, 152);
+            this.label1.Location = new System.Drawing.Point(72, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 21);
             this.label1.TabIndex = 1;
@@ -80,19 +80,21 @@ namespace FurnitureShop
             // textBoxUserName
             // 
             this.textBoxUserName.BackColor = System.Drawing.Color.Bisque;
+            this.textBoxUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserName.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBoxUserName.Location = new System.Drawing.Point(156, 109);
             this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(156, 20);
+            this.textBoxUserName.Size = new System.Drawing.Size(156, 27);
             this.textBoxUserName.TabIndex = 4;
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.BackColor = System.Drawing.Color.Bisque;
+            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.SaddleBrown;
             this.textBoxPassword.Location = new System.Drawing.Point(156, 155);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(156, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(156, 27);
             this.textBoxPassword.TabIndex = 5;
             // 
             // buttonLogIn
@@ -128,7 +130,7 @@ namespace FurnitureShop
             // 
             this.pictureBoxShowPassword.BackgroundImage = global::FurnitureShop.Properties.Resources.eye_icon1;
             this.pictureBoxShowPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxShowPassword.Location = new System.Drawing.Point(318, 155);
+            this.pictureBoxShowPassword.Location = new System.Drawing.Point(318, 162);
             this.pictureBoxShowPassword.Name = "pictureBoxShowPassword";
             this.pictureBoxShowPassword.Size = new System.Drawing.Size(18, 20);
             this.pictureBoxShowPassword.TabIndex = 8;

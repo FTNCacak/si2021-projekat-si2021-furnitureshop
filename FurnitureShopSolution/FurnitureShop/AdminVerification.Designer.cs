@@ -54,10 +54,11 @@
             // 
             // textBoxAVusername
             // 
+            this.textBoxAVusername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAVusername.Location = new System.Drawing.Point(88, 47);
             this.textBoxAVusername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAVusername.Name = "textBoxAVusername";
-            this.textBoxAVusername.Size = new System.Drawing.Size(113, 20);
+            this.textBoxAVusername.Size = new System.Drawing.Size(113, 27);
             this.textBoxAVusername.TabIndex = 1;
             // 
             // label2
@@ -75,10 +76,11 @@
             // 
             // textBoxAVpassword
             // 
+            this.textBoxAVpassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAVpassword.Location = new System.Drawing.Point(88, 89);
             this.textBoxAVpassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAVpassword.Name = "textBoxAVpassword";
-            this.textBoxAVpassword.Size = new System.Drawing.Size(113, 20);
+            this.textBoxAVpassword.Size = new System.Drawing.Size(113, 27);
             this.textBoxAVpassword.TabIndex = 3;
             // 
             // buttonRegister
@@ -88,7 +90,7 @@
             this.buttonRegister.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.Color.Bisque;
             this.buttonRegister.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonRegister.Location = new System.Drawing.Point(57, 137);
+            this.buttonRegister.Location = new System.Drawing.Point(63, 137);
             this.buttonRegister.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(122, 37);
@@ -100,13 +102,13 @@
             // Registration
             // 
             this.Registration.AutoSize = true;
-            this.Registration.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registration.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Registration.ForeColor = System.Drawing.Color.Bisque;
             this.Registration.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Registration.Location = new System.Drawing.Point(35, 9);
+            this.Registration.Location = new System.Drawing.Point(42, 9);
             this.Registration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Registration.Name = "Registration";
-            this.Registration.Size = new System.Drawing.Size(177, 25);
+            this.Registration.Size = new System.Drawing.Size(159, 25);
             this.Registration.TabIndex = 20;
             this.Registration.Text = "Admin verification";
             // 
@@ -114,7 +116,7 @@
             // 
             this.pictureBoxShowPassword.BackgroundImage = global::FurnitureShop.Properties.Resources.eye_icon1;
             this.pictureBoxShowPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxShowPassword.Location = new System.Drawing.Point(206, 89);
+            this.pictureBoxShowPassword.Location = new System.Drawing.Point(206, 96);
             this.pictureBoxShowPassword.Name = "pictureBoxShowPassword";
             this.pictureBoxShowPassword.Size = new System.Drawing.Size(18, 20);
             this.pictureBoxShowPassword.TabIndex = 21;
